@@ -1,0 +1,36 @@
+package com.infunity.isometricgame.Model;
+
+import com.infunity.isometricgame.Model.Maps.Map;
+import com.infunity.isometricgame.Utils.Box2DWorld;
+
+/**
+ * Created by Lukasz on 2014-10-12.
+ */
+public class GameWorld {
+
+    private Map map;
+    private Box2DWorld box2dworld;
+
+    public GameWorld(Box2DWorld box2dworld, Map map) {
+        this.box2dworld = box2dworld;
+        this.map = map;
+    }
+
+    public void resetGame() {
+        map.resetGame();
+    }
+
+    public void update(float delta) {
+        map.update(delta);
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void dispose() {
+        map.dispose();
+    }
+
+
+}
