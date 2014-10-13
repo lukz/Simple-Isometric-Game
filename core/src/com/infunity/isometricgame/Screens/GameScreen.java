@@ -1,12 +1,14 @@
 package com.infunity.isometricgame.Screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector2;
+import com.infunity.isometricgame.Input.PlayerInputHandler;
 import com.infunity.isometricgame.IsometricGame;
-import com.infunity.isometricgame.Model.GameWorld;
-import com.infunity.isometricgame.Model.Maps.Map;
-import com.infunity.isometricgame.Model.Maps.TestMap;
-import com.infunity.isometricgame.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.GameWorld;
+import com.infunity.isometricgame.shared.Model.Maps.Map;
+import com.infunity.isometricgame.shared.Model.Maps.TestMap;
+import com.infunity.isometricgame.shared.Model.Box2DWorld;
 import com.infunity.isometricgame.View.WorldRenderer;
 
 /**
@@ -36,6 +38,8 @@ public class GameScreen implements Screen {
         map = new TestMap(box2dworld);
         world = new GameWorld(box2dworld, map);
         render = new WorldRenderer(world);
+
+        Gdx.input.setInputProcessor(new PlayerInputHandler(map));
     }
 
     @Override

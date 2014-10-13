@@ -1,6 +1,6 @@
-package com.infunity.isometricgame.Model.Maps;
+package com.infunity.isometricgame.shared.Model.Maps;
 
-import com.infunity.isometricgame.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.Box2DWorld;
 
 /**
  * Created by Lukasz on 2014-10-12.

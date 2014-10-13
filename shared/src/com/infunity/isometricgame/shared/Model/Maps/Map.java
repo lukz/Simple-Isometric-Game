@@ -1,14 +1,14 @@
-package com.infunity.isometricgame.Model.Maps;
+package com.infunity.isometricgame.shared.Model.Maps;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
-import com.infunity.isometricgame.Model.Entities.Player;
-import com.infunity.isometricgame.Model.EntityManager;
-import com.infunity.isometricgame.Model.PhysicsObject;
-import com.infunity.isometricgame.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.Entities.Player;
+import com.infunity.isometricgame.shared.Model.EntityManager;
+import com.infunity.isometricgame.shared.Model.PhysicsObject;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -30,11 +30,6 @@ public abstract class Map implements ContactListener {
     public void update(float delta) {
         entMan.update(delta);
         player.update(delta);
-    }
-
-    public void draw(SpriteBatch batch) {
-        entMan.draw(batch);
-        player.draw(batch);
     }
 
     public void resetGame() {

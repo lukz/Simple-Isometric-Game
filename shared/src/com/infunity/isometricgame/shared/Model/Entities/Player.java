@@ -1,12 +1,12 @@
-package com.infunity.isometricgame.Model.Entities;
+package com.infunity.isometricgame.shared.Model.Entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.infunity.isometricgame.Model.Box2DWorld;
-import com.infunity.isometricgame.Model.Maps.Map;
-import com.infunity.isometricgame.Model.PhysicsObject;
+import com.infunity.isometricgame.shared.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.Maps.Map;
+import com.infunity.isometricgame.shared.Model.PhysicsObject;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -35,11 +35,6 @@ public class Player extends MovableEntity implements PhysicsObject {
         velocity.set(direction).nor().scl(speed * delta);
 
         body.setLinearVelocity(velocity);
-    }
-
-    @Override
-    public void draw(SpriteBatch batch) {
-
     }
 
     @Override

@@ -94,6 +94,17 @@ project(":core") {
 
 
     dependencies {
+        compile project(":shared")
+        // Moved to shared
+        //compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        //compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    }
+}
+
+project(":shared") {
+    apply plugin: "java"
+
+    dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
     }

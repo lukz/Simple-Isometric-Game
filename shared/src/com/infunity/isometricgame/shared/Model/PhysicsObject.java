@@ -1,7 +1,7 @@
-package com.infunity.isometricgame.Model;
+package com.infunity.isometricgame.shared.Model;
 
 import com.badlogic.gdx.physics.box2d.Body;
-import com.infunity.isometricgame.Model.Maps.Map;
+import com.infunity.isometricgame.shared.Model.Maps.Map;
 
 /**
  * Created by Lukasz on 2014-10-12.

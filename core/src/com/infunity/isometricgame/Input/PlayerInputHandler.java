@@ -2,7 +2,7 @@ package com.infunity.isometricgame.Input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.infunity.isometricgame.Model.Maps.Map;
+import com.infunity.isometricgame.shared.Model.Maps.Map;
 
 /**
  * Created by Lukasz on 2014-10-13.

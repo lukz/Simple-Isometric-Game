@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.Model.Entities;
+package com.infunity.isometricgame.shared.Model.Entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
@@ -21,7 +21,6 @@ public abstract class Entity {
         bounds = new Rectangle(x, y, width, height);
     }
 
-    public abstract void draw(SpriteBatch batch);
     public abstract void update(float delta);
     public abstract void dispose();
 
