@@ -1,7 +1,6 @@
 package com.infunity.isometricgame.Model;
 
 import com.infunity.isometricgame.Model.Maps.Map;
-import com.infunity.isometricgame.Utils.Box2DWorld;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -32,5 +31,7 @@ public class GameWorld {
         map.dispose();
     }
 
-
+    public Box2DWorld getBox2dworld() {
+        return box2dworld;
+    }
 }

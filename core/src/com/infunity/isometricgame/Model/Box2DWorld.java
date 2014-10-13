@@ -1,9 +1,8 @@
-package com.infunity.isometricgame.Utils;
+package com.infunity.isometricgame.Model;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -19,8 +18,6 @@ public class Box2DWorld {
     private World world;
     private Box2DDebugRenderer renderer;
 
-//    private FixtureDefBuilder fixtureDefBuilder;
-//    private BodyBuilder bodyBuilder;
 
     public Box2DWorld(Vector2 gravity) {
 //        World.setVelocityThreshold(WORLD_TO_BOX);
@@ -50,6 +47,30 @@ public class Box2DWorld {
 //			}
 //		}
 //	}
+
+    public Body createRectangle(float x, float y, float width, float height,
+                                BodyDef.BodyType type, boolean fixedRotation) {
+
+        PolygonShape ps = new PolygonShape();
+        ps.setAsBox(width * WORLD_TO_BOX / 2f, height * WORLD_TO_BOX / 2f);
+
+        FixtureDef fdef = new FixtureDef();
+        fdef.density = 1f;
+        fdef.friction = 0.0f;
+        fdef.restitution = 0.0f;
+        fdef.shape = ps;
+
+        BodyDef bd = new BodyDef();
+        bd.allowSleep = true;
+        bd.position.set(x * WORLD_TO_BOX, y * WORLD_TO_BOX);
+        bd.fixedRotation = fixedRotation;
+
+        Body body = world.createBody(bd);
+        body.createFixture(fdef);
+        body.setType(type);
+
+        return body;
+    }
 
     /*
 	 * Render box2d debug

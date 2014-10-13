@@ -12,9 +12,9 @@ import com.infunity.isometricgame.Screens.LoadingScreen;
 
 public class IsometricGame extends Game {
 
-    public static final boolean DEBUG = false;
-    public static final float TARGET_WIDTH = 576;
-    public static final float TARGET_HEIGHT = 1024;
+    public static final boolean DEBUG = true;
+    public static final float TARGET_WIDTH = 1024;
+    public static final float TARGET_HEIGHT = 576;
 
     public static Assets assets;
 

@@ -2,6 +2,8 @@ package com.infunity.isometricgame.Model.Entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.infunity.isometricgame.Model.Box2DWorld;
 import com.infunity.isometricgame.Model.Maps.Map;
 import com.infunity.isometricgame.Model.PhysicsObject;
 
@@ -12,8 +14,10 @@ public class Player extends MovableEntity implements PhysicsObject {
 
     private Body body;
 
-    public Player(float speed, float rotation, float x, float y, float width, float height) {
+    public Player(float speed, float rotation, float x, float y, float width, float height, Box2DWorld box2DWorld) {
         super(speed, rotation, x, y, width, height);
+
+        this.body = box2DWorld.createRectangle(x, y, width, height, BodyDef.BodyType.DynamicBody, true);
     }
 
     @Override

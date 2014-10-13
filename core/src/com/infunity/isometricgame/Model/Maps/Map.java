@@ -8,7 +8,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.infunity.isometricgame.Model.Entities.Player;
 import com.infunity.isometricgame.Model.EntityManager;
 import com.infunity.isometricgame.Model.PhysicsObject;
-import com.infunity.isometricgame.Utils.Box2DWorld;
+import com.infunity.isometricgame.Model.Box2DWorld;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -24,7 +24,7 @@ public abstract class Map implements ContactListener {
         this.box2dworld = box2dworld;
         this.entMan = new EntityManager(this);
 
-        this.player = new Player(0, 0, 0, 0, 0, 0);
+        this.player = new Player(10, 0, 100, 100, 32, 32, box2dworld);
     }
 
     public void update(float delta) {

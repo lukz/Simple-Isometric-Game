@@ -6,7 +6,7 @@ import com.infunity.isometricgame.IsometricGame;
 import com.infunity.isometricgame.Model.GameWorld;
 import com.infunity.isometricgame.Model.Maps.Map;
 import com.infunity.isometricgame.Model.Maps.TestMap;
-import com.infunity.isometricgame.Utils.Box2DWorld;
+import com.infunity.isometricgame.Model.Box2DWorld;
 import com.infunity.isometricgame.View.WorldRenderer;
 
 /**
@@ -31,7 +31,7 @@ public class GameScreen implements Screen {
     public GameScreen(IsometricGame game) {
         this.game = game;
 
-        box2dworld = new Box2DWorld(new Vector2(0, -10));
+        box2dworld = new Box2DWorld(new Vector2(0, 0));
 
         map = new TestMap(box2dworld);
         world = new GameWorld(box2dworld, map);
