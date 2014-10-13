@@ -1,5 +1,7 @@
 package com.infunity.isometricgame.Model;
 
+import com.badlogic.gdx.Gdx;
+import com.infunity.isometricgame.Input.PlayerInputHandler;
 import com.infunity.isometricgame.Model.Maps.Map;
 
 /**
@@ -13,6 +15,8 @@ public class GameWorld {
     public GameWorld(Box2DWorld box2dworld, Map map) {
         this.box2dworld = box2dworld;
         this.map = map;
+
+        Gdx.input.setInputProcessor(new PlayerInputHandler(map));
     }
 
     public void resetGame() {

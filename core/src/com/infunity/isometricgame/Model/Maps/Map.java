@@ -24,7 +24,7 @@ public abstract class Map implements ContactListener {
         this.box2dworld = box2dworld;
         this.entMan = new EntityManager(this);
 
-        this.player = new Player(10, 0, 100, 100, 32, 32, box2dworld);
+        this.player = new Player(100, 0, 100, 100, 32, 32, box2dworld);
     }
 
     public void update(float delta) {
@@ -73,4 +73,7 @@ public abstract class Map implements ContactListener {
         entMan.dispose();
     };
 
+    public Player getPlayer() {
+        return player;
+    }
 }
