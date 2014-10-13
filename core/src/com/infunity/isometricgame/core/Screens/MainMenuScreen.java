@@ -1,7 +1,7 @@
-package com.infunity.isometricgame.Screens;
+package com.infunity.isometricgame.core.Screens;
 
 import com.badlogic.gdx.Screen;
-import com.infunity.isometricgame.IsometricGame;
+import com.infunity.isometricgame.core.IsometricGame;
 
 /**
  * Created by Lukasz on 2014-10-12.

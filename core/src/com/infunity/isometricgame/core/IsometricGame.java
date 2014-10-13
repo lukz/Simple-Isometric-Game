@@ -1,9 +1,9 @@
-package com.infunity.isometricgame;
+package com.infunity.isometricgame.core;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.infunity.isometricgame.shared.Model.Assets;
-import com.infunity.isometricgame.Screens.LoadingScreen;
+import com.infunity.isometricgame.core.Screens.LoadingScreen;
 
 public class IsometricGame extends Game {
 

@@ -1,9 +1,9 @@
-package com.infunity.isometricgame.View;
+package com.infunity.isometricgame.core.View;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.infunity.isometricgame.IsometricGame;
+import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.Model.GameWorld;
 
 /**

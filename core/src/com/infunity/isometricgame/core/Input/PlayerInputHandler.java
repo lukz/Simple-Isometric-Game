@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.Input;
+package com.infunity.isometricgame.core.Input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
