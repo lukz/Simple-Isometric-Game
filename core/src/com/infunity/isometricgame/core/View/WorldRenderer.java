@@ -8,6 +8,7 @@ import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.Model.GameWorld;
+import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
 
 /**
  * Created by Lukasz on 2014-10-12.

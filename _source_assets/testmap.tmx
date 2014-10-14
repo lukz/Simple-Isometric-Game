@@ -55,5 +55,9 @@
   <object x="450" y="725">
    <polygon points="0,0 -50,25 100,100 250,25 200,0 100,50"/>
   </object>
+  <object x="0" y="1000" width="50" height="25"/>
+  <object x="52" y="894">
+   <polygon points="16,5 71,-11 50,25"/>
+  </object>
  </objectgroup>
 </map>

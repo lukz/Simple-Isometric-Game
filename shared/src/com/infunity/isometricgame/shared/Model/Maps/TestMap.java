@@ -14,7 +14,8 @@ public class TestMap extends Map {
         super(box2dworld);
 
         tileMap = new TmxMapLoader().load("testmap.tmx");
-
+        MapProcessor.createGroundObjects(this, tileMap.getLayers().get("collision"), box2dworld);
+        System.out.println("finished!");
     }
 
     @Override
