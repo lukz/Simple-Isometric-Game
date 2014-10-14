@@ -1,6 +1,7 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -19,6 +20,8 @@ public abstract class Map implements ContactListener {
 
     protected Box2DWorld box2dworld;
     protected Player player;
+
+    protected TiledMap tileMap;
 
     protected Map(Box2DWorld box2dworld) {
         this.box2dworld = box2dworld;
@@ -70,5 +73,9 @@ public abstract class Map implements ContactListener {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public TiledMap getTileMap() {
+        return tileMap;
     }
 }

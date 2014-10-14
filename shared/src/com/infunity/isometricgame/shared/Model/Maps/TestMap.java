@@ -1,5 +1,8 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 
 /**
@@ -9,6 +12,9 @@ public class TestMap extends Map {
 
     public TestMap(Box2DWorld box2dworld) {
         super(box2dworld);
+
+        tileMap = new TmxMapLoader().load("testmap.tmx");
+
     }
 
     @Override
