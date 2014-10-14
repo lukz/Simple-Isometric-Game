@@ -14,8 +14,13 @@ public class TestMap extends Map {
         super(box2dworld);
 
         tileMap = new TmxMapLoader().load("testmap.tmx");
+
+        // Create Polygon objects from collision layer
         MapProcessor.createGroundObjects(this, tileMap.getLayers().get("collision"), box2dworld);
-        System.out.println("finished!");
+
+        // Set player position according to position of Ellipse object added to collision layer
+        System.out.println(MapProcessor.getPlayerPostion(this, tileMap.getLayers().get("collision")));
+        player.transform(MapProcessor.getPlayerPostion(this, tileMap.getLayers().get("collision")));
     }
 
     @Override

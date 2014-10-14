@@ -64,6 +64,11 @@ public class Player extends MovableEntity implements PhysicsObject {
         return direction;
     }
 
+    /** Sets player body position */
+    public void transform(Vector2 newPos) {
+        body.setTransform(newPos.x * Box2DWorld.WORLD_TO_BOX, newPos.y * Box2DWorld.WORLD_TO_BOX, 0);
+    }
+
     @Override
     public void dispose() {
 
