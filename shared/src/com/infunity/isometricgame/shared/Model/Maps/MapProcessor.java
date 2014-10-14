@@ -101,7 +101,8 @@ public class MapProcessor {
             if(object instanceof EllipseMapObject) {
                 EllipseMapObject mapObject = (EllipseMapObject)object;
                 Vector3 tempVec3 = new Vector3();
-                tempVec3.set(mapObject.getEllipse().x, mapObject.getEllipse().y, 0);
+                tempVec3.set(mapObject.getEllipse().x + mapObject.getEllipse().width / 2,
+                        mapObject.getEllipse().y + mapObject.getEllipse().height / 2, 0);
                 tempVec3.mul(getTransformationMatrix(map));
 
                 playerPos.set(tempVec3.x, tempVec3.y);
