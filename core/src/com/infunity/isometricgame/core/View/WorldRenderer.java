@@ -26,16 +26,17 @@ public class WorldRenderer {
         cam.setToOrtho(false, IsometricGame.TARGET_WIDTH,
                 IsometricGame.TARGET_HEIGHT);
 
-        cam.position.x = IsometricGame.TARGET_WIDTH / 2;
-        cam.position.y = IsometricGame.TARGET_HEIGHT / 2;
-
-        cam.update();
-
         tiledMapRenderer = new IsometricStaggeredTiledMapRenderer(world.getMap().getTileMap());
         tiledMapRenderer.setView(cam);
     }
 
     public void render(float delta) {
+        // Update camera
+        cam.position.x = world.getMap().getPlayer().getPositionX();
+        cam.position.y = world.getMap().getPlayer().getPositionY();
+        cam.update();
+        tiledMapRenderer.setView(cam);
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 

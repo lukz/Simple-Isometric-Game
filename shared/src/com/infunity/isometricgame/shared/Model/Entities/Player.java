@@ -32,6 +32,9 @@ public class Player extends MovableEntity implements PhysicsObject {
 
     @Override
     public void update(float delta) {
+        // Get player position from Box2D world
+        setPosition(body.getPosition().scl(Box2DWorld.BOX_TO_WORLD), 0);
+
         velocity.set(direction).nor().scl(speed * delta);
 
         body.setLinearVelocity(velocity);

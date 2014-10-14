@@ -2,6 +2,7 @@ package com.infunity.isometricgame.shared.Model.Entities;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 
 /**
@@ -41,6 +42,10 @@ public abstract class Entity {
     public void setPosition(float x, float y) {
         this.pos.x = x;
         this.pos.y = y;
+    }
+
+    public void setPosition(Vector2 newPos, float z) {
+        this.pos.set(newPos, z);
     }
 
     /**
