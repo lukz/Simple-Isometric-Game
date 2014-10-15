@@ -7,7 +7,7 @@ import com.infunity.isometricgame.core.Screens.LoadingScreen;
 
 public class IsometricGame extends Game {
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
     public static final float TARGET_WIDTH = 1024;
     public static final float TARGET_HEIGHT = 576;
 

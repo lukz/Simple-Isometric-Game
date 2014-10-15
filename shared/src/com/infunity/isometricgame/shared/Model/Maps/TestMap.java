@@ -1,7 +1,5 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 
@@ -19,8 +17,8 @@ public class TestMap extends Map {
         MapProcessor.createGroundObjects(this, tileMap.getLayers().get("collision"), box2dworld);
 
         // Set player position according to position of Ellipse object added to collision layer
-        System.out.println(MapProcessor.getPlayerPostion(this, tileMap.getLayers().get("collision")));
-        player.transform(MapProcessor.getPlayerPostion(this, tileMap.getLayers().get("collision")));
+        System.out.println(MapProcessor.getPlayerPosition(this, tileMap.getLayers().get("collision")));
+        player.transform(MapProcessor.getPlayerPosition(this, tileMap.getLayers().get("collision")));
     }
 
     @Override

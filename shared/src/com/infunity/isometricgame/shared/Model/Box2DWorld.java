@@ -48,6 +48,44 @@ public class Box2DWorld {
 //		}
 //	}
 
+    public Body createPlayerBody(float x, float y, float width, float height,
+                                BodyDef.BodyType type, boolean fixedRotation) {
+        PolygonShape ps = new PolygonShape();
+
+        float[] vertices = new float[8];
+
+        vertices[0] = -width * WORLD_TO_BOX / 2f;
+        vertices[1] = 0;
+
+        vertices[2] = 0;
+        vertices[3] = -height * WORLD_TO_BOX / 2f;
+
+        vertices[4] = width * WORLD_TO_BOX / 2f;
+        vertices[5] = 0;
+
+        vertices[6] = 0;
+        vertices[7] = height * WORLD_TO_BOX / 2f;
+
+        ps.set(vertices);
+
+        FixtureDef fdef = new FixtureDef();
+        fdef.density = 1f;
+        fdef.friction = 0.0f;
+        fdef.restitution = 0.0f;
+        fdef.shape = ps;
+
+        BodyDef bd = new BodyDef();
+        bd.allowSleep = true;
+        bd.position.set(x * WORLD_TO_BOX, y * WORLD_TO_BOX);
+        bd.fixedRotation = fixedRotation;
+
+        Body body = world.createBody(bd);
+        body.createFixture(fdef);
+        body.setType(type);
+
+        return body;
+    }
+
     public Body createRectangle(float x, float y, float width, float height,
                                 BodyDef.BodyType type, boolean fixedRotation) {
 

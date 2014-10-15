@@ -1,11 +1,15 @@
 package com.infunity.isometricgame.shared.Model;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Texture;
 
 /**
  * Created by Lukasz on 2014-10-12.
  */
 public class Assets {
+
+    // Textures
+    public final String PlayerTex = "graphics/character.png";
 
     private AssetManager manager;
 
@@ -17,7 +21,7 @@ public class Assets {
     }
 
     public void enqueueAssets() {
-
+        manager.load(PlayerTex, Texture.class);
     }
 
     public boolean update() {

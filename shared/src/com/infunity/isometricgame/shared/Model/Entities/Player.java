@@ -24,7 +24,7 @@ public class Player extends MovableEntity implements PhysicsObject {
     public Player(float speed, float rotation, float x, float y, float width, float height, Box2DWorld box2DWorld) {
         super(speed, rotation, x, y, width, height);
 
-        this.body = box2DWorld.createRectangle(x, y, width, height, BodyDef.BodyType.DynamicBody, true);
+        this.body = box2DWorld.createPlayerBody(x, y, width, height, BodyDef.BodyType.DynamicBody, true);
 
         this.direction = new Vector2(0, 0);
         this.velocity = new Vector2(0, 0);

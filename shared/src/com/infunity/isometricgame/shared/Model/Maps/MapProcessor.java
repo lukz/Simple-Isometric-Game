@@ -94,7 +94,7 @@ public class MapProcessor {
         body.setUserData(map);
     }
 
-    public static Vector2 getPlayerPostion(Map map, MapLayer layer) {
+    public static Vector2 getPlayerPosition(Map map, MapLayer layer) {
         Vector2 playerPos = new Vector2(0,0);
 
         for(MapObject object : layer.getObjects()) {
