@@ -1,11 +1,11 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.infunity.isometricgame.shared.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 import com.infunity.isometricgame.shared.Model.Entities.Player;
 import com.infunity.isometricgame.shared.Model.EntityManager;
@@ -23,11 +23,17 @@ public abstract class Map implements ContactListener {
 
     protected TiledMap tileMap;
 
-    protected Map(Box2DWorld box2dworld) {
+    private EffectsInterface effectManager;
+
+    protected Map(Box2DWorld box2dworld, EffectsInterface effectManager) {
         this.box2dworld = box2dworld;
+        this.effectManager = effectManager;
         this.entMan = new EntityManager(this);
 
         this.player = new Player(100, 0, 100, 100, 100, 50, box2dworld);
+
+        // Pass all collisions through this class
+        box2dworld.getWorld().setContactListener(this);
     }
 
     public void update(float delta) {
@@ -67,11 +73,6 @@ public abstract class Map implements ContactListener {
     public void postSolve(Contact contact, ContactImpulse impulse) {
     }
 
-    public void dispose() {
-        entMan.dispose();
-        tileMap.dispose();
-    };
-
     public Player getPlayer() {
         return player;
     }
@@ -79,4 +80,17 @@ public abstract class Map implements ContactListener {
     public TiledMap getTileMap() {
         return tileMap;
     }
+
+    public EffectsInterface getEffectManager() {
+        return effectManager;
+    }
+
+    public EntityManager getEntMan() {
+        return entMan;
+    }
+
+    public void dispose() {
+        entMan.dispose();
+        tileMap.dispose();
+    };
 }

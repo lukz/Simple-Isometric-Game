@@ -63,4 +63,23 @@
    <ellipse/>
   </object>
  </objectgroup>
+ <objectgroup name="coins">
+  <object x="1377.67" y="239.667"/>
+  <object x="1307.67" y="249"/>
+  <object x="1254.34" y="272"/>
+  <object x="1190.34" y="295"/>
+  <object x="1131" y="332.667"/>
+  <object x="1065.67" y="368.667"/>
+  <object x="991.67" y="411.334"/>
+  <object x="956.337" y="484.667"/>
+  <object x="931.67" y="562"/>
+  <object x="971.003" y="784"/>
+  <object x="1239" y="636"/>
+  <object x="1152.34" y="738.334"/>
+  <object x="1642.34" y="520.667"/>
+  <object x="1664.34" y="411.334"/>
+  <object x="1773" y="302.667"/>
+  <object x="1646.34" y="184.334"/>
+  <object x="1440.34" y="373.334"/>
+ </objectgroup>
 </map>

@@ -5,6 +5,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.Input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
+import com.infunity.isometricgame.core.View.EffectManager;
+import com.infunity.isometricgame.core.View.ParticleManager;
+import com.infunity.isometricgame.shared.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.GameWorld;
 import com.infunity.isometricgame.shared.Model.Maps.Map;
 import com.infunity.isometricgame.shared.Model.Maps.TestMap;
@@ -35,7 +38,7 @@ public class GameScreen implements Screen {
 
         box2dworld = new Box2DWorld(new Vector2(0, 0));
 
-        map = new TestMap(box2dworld);
+        map = new TestMap(box2dworld, new EffectManager(new ParticleManager()));
         world = new GameWorld(box2dworld, map);
         render = new WorldRenderer(world);
 
@@ -60,8 +63,8 @@ public class GameScreen implements Screen {
 			/*
 			 * Update physics
 			 */
-            world.update(TIMESTEP);
             box2dworld.update(TIMESTEP);
+            world.update(TIMESTEP);
 
             fixedTimestepAccumulator -= TIMESTEP;
         }

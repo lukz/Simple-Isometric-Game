@@ -4,12 +4,14 @@ import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.EllipseMapObject;
 import com.badlogic.gdx.maps.objects.PolygonMapObject;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
+import com.infunity.isometricgame.shared.Model.Entities.Coin;
 import net.dermetfan.gdx.math.GeometryUtils;
 import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
 
@@ -25,6 +27,30 @@ public class MapProcessor {
         for(MapObject object : layer.getObjects()) {
             if(object instanceof PolygonMapObject) {
                 polygonGround(object, map, world, transformMat4);
+            }
+        }
+    }
+
+    public static void createCoins(Map map, MapLayer layer, Box2DWorld world) {
+
+        Matrix4 transformMat4 = getTransformationMatrix(map);
+        Vector3 coinPos = new Vector3();
+
+        for(MapObject object : layer.getObjects()) {
+            if(object instanceof RectangleMapObject) {
+                RectangleMapObject rectangleObj = (RectangleMapObject)object;
+
+                // Get coin position from map object and transform it by transformation matrix
+                coinPos.set(rectangleObj.getRectangle().getX() + rectangleObj.getRectangle().width / 2,
+                        rectangleObj.getRectangle().getY() + rectangleObj.getRectangle().height / 2, 0);
+                coinPos.mul(transformMat4);
+
+                // Create new Coin
+                Coin newCoin = new Coin(coinPos.x, coinPos.y, world);
+
+                // Add Coin entity to EntityManager
+                map.getEntMan().addCoin(newCoin);
+
             }
         }
     }

@@ -8,7 +8,9 @@ import com.badlogic.gdx.maps.tiled.renderers.IsometricStaggeredTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.infunity.isometricgame.core.IsometricGame;
+import com.infunity.isometricgame.core.View.EntityRenderers.CoinsRenderer;
 import com.infunity.isometricgame.core.View.EntityRenderers.PlayerRenderer;
+import com.infunity.isometricgame.shared.Model.Entities.Coin;
 import com.infunity.isometricgame.shared.Model.GameWorld;
 import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
 
@@ -24,7 +26,10 @@ public class WorldRenderer {
 
     // Renderers
     private PlayerRenderer playerRenderer;
+    private CoinsRenderer coinsRenderer;
     private IsometricStaggeredTiledMapRenderer tiledMapRenderer;
+
+    private EffectManager effectManager;
 
     public WorldRenderer(GameWorld world) {
         this.world = world;
@@ -40,6 +45,9 @@ public class WorldRenderer {
         tiledMapRenderer.setView(cam);
 
         playerRenderer = new PlayerRenderer(world.getMap().getPlayer());
+        coinsRenderer = new CoinsRenderer();
+
+        effectManager = (EffectManager)world.getMap().getEffectManager();
     }
 
     public void render(float delta) {
@@ -49,6 +57,9 @@ public class WorldRenderer {
         cam.update();
         batch.setProjectionMatrix(cam.combined);
         tiledMapRenderer.setView(cam);
+
+        // Update particles
+        effectManager.update(delta);
 
         // Clear screen
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -60,6 +71,10 @@ public class WorldRenderer {
         batch.begin();
 
         // Render entities
+        for(Coin coin : world.getMap().getEntMan().getCoinEntities()) {
+            coinsRenderer.render(batch, coin);
+        }
+        effectManager.draw(batch);
         playerRenderer.render(batch);
 
         batch.end();

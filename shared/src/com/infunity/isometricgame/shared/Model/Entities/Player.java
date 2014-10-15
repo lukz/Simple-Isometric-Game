@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.infunity.isometricgame.shared.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 import com.infunity.isometricgame.shared.Model.Maps.Map;
 import com.infunity.isometricgame.shared.Model.PhysicsObject;
@@ -25,6 +26,7 @@ public class Player extends MovableEntity implements PhysicsObject {
         super(speed, rotation, x, y, width, height);
 
         this.body = box2DWorld.createPlayerBody(x, y, width, height, BodyDef.BodyType.DynamicBody, true);
+        this.body.setUserData(this);
 
         this.direction = new Vector2(0, 0);
         this.velocity = new Vector2(0, 0);
@@ -43,6 +45,14 @@ public class Player extends MovableEntity implements PhysicsObject {
     @Override
     public void handleBeginContact(PhysicsObject psycho2, Map map) {
 
+
+        if(psycho2 instanceof Coin) {
+            Coin coin = (Coin)psycho2;
+
+            map.getEntMan().removeCoin(coin);
+            map.getEffectManager().createEffect((int)coin.getPositionX(), (int)coin.getPositionY(),
+                    EffectsInterface.Effect.COIN_EFFECT);
+        }
     }
 
     @Override

@@ -3,6 +3,10 @@ package com.infunity.isometricgame.shared.Model;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.utils.Array;
+import com.infunity.isometricgame.shared.Model.Entities.Player;
+
+import java.util.Iterator;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -18,35 +22,39 @@ public class Box2DWorld {
     private World world;
     private Box2DDebugRenderer renderer;
 
+    // Array used to sweep dead bodies
+    private Array<Body> bodies;
 
     public Box2DWorld(Vector2 gravity) {
 //        World.setVelocityThreshold(WORLD_TO_BOX);
         world = new World(gravity, true);
         renderer = new Box2DDebugRenderer();
+
+        bodies = new Array<Body>();
     }
 
     public void update(float dt) {
         world.step(dt, 6, 2);
-        //sweepDeadBodies();
+        sweepDeadBodies();
     }
 
     /*
 	 * Bodies should be removed after world step to prevent simulation crash
 	 */
-//	public void sweepDeadBodies() {
-//		world.getBodies(bodies);
-//		for (Iterator<Body> iter = bodies.iterator(); iter.hasNext();) {
-//			Body body = iter.next();
-//			if (body != null && (body.getUserData() instanceof Player)) {
-//				Player data = (Player) body.getUserData();
-//				if (data.isFlaggedForDelete) {
-//					getWorld().destroyBody(body);
-//					body.setUserData(null);
-//					body = null;
-//				}
-//			}
-//		}
-//	}
+	public void sweepDeadBodies() {
+		world.getBodies(bodies);
+		for (Iterator<Body> iter = bodies.iterator(); iter.hasNext();) {
+			Body body = iter.next();
+			if (body != null && (body.getUserData() instanceof PhysicsObject)) {
+                PhysicsObject data = (PhysicsObject) body.getUserData();
+				if (data.getFlagForDelete()) {
+					getWorld().destroyBody(body);
+					body.setUserData(null);
+					body = null;
+				}
+			}
+		}
+	}
 
     public Body createPlayerBody(float x, float y, float width, float height,
                                 BodyDef.BodyType type, boolean fixedRotation) {
@@ -87,7 +95,7 @@ public class Box2DWorld {
     }
 
     public Body createRectangle(float x, float y, float width, float height,
-                                BodyDef.BodyType type, boolean fixedRotation) {
+                                BodyDef.BodyType type, boolean fixedRotation, boolean isSensor) {
 
         PolygonShape ps = new PolygonShape();
         ps.setAsBox(width * WORLD_TO_BOX / 2f, height * WORLD_TO_BOX / 2f);
@@ -97,6 +105,7 @@ public class Box2DWorld {
         fdef.friction = 0.0f;
         fdef.restitution = 0.0f;
         fdef.shape = ps;
+        fdef.isSensor = isSensor;
 
         BodyDef bd = new BodyDef();
         bd.allowSleep = true;
@@ -106,6 +115,8 @@ public class Box2DWorld {
         Body body = world.createBody(bd);
         body.createFixture(fdef);
         body.setType(type);
+
+
 
         return body;
     }
