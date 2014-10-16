@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricStaggeredTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.View.EntityRenderers.CoinsRenderer;
 import com.infunity.isometricgame.core.View.EntityRenderers.PlayerRenderer;
@@ -20,8 +22,8 @@ import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
 public class WorldRenderer {
 
     private GameWorld world;
-    private OrthographicCamera cam;
 
+    private CameraManager cameraManager;
     private SpriteBatch batch;
 
     // Renderers
@@ -36,13 +38,12 @@ public class WorldRenderer {
 
         batch = new SpriteBatch();
 
-        cam = new OrthographicCamera();
-        cam.setToOrtho(false, IsometricGame.TARGET_WIDTH,
-                IsometricGame.TARGET_HEIGHT);
-        batch.setProjectionMatrix(cam.combined);
+        cameraManager = new CameraManager(world.getMap());
+
+        batch.setProjectionMatrix(cameraManager.getCamera().combined);
 
         tiledMapRenderer = new IsometricStaggeredTiledMapRenderer(world.getMap().getTileMap());
-        tiledMapRenderer.setView(cam);
+        tiledMapRenderer.setView(cameraManager.getCamera());
 
         playerRenderer = new PlayerRenderer(world.getMap().getPlayer());
         coinsRenderer = new CoinsRenderer();
@@ -50,13 +51,12 @@ public class WorldRenderer {
         effectManager = (EffectManager)world.getMap().getEffectManager();
     }
 
+
     public void render(float delta) {
         // Update camera
-        cam.position.x = world.getMap().getPlayer().getPositionX();
-        cam.position.y = world.getMap().getPlayer().getPositionY();
-        cam.update();
-        batch.setProjectionMatrix(cam.combined);
-        tiledMapRenderer.setView(cam);
+        cameraManager.update();
+        batch.setProjectionMatrix(cameraManager.getCamera().combined);
+        tiledMapRenderer.setView(cameraManager.getCamera());
 
         // Update particles
         effectManager.update(delta);
@@ -81,7 +81,7 @@ public class WorldRenderer {
 
         // Box2D debug rendering
         if (IsometricGame.DEBUG) {
-            world.getBox2dworld().render(cam);
+            world.getBox2dworld().render(cameraManager.getCamera());
         }
     }
 

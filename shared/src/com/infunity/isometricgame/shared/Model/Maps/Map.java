@@ -1,6 +1,7 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -20,17 +21,21 @@ public abstract class Map implements ContactListener {
 
     protected Box2DWorld box2dworld;
     protected Player player;
-
     protected TiledMap tileMap;
 
-    private EffectsInterface effectManager;
+    protected EffectsInterface effectManager;
+
+    protected int tileWidth;
+    protected int tileHeight;
+    protected int width;
+    protected int height;
 
     protected Map(Box2DWorld box2dworld, EffectsInterface effectManager) {
         this.box2dworld = box2dworld;
         this.effectManager = effectManager;
         this.entMan = new EntityManager(this);
 
-        this.player = new Player(100, 0, 100, 100, 100, 50, box2dworld);
+        this.player = new Player(100, 0, 0, 0, 100, 50, box2dworld);
 
         // Pass all collisions through this class
         box2dworld.getWorld().setContactListener(this);
@@ -87,6 +92,22 @@ public abstract class Map implements ContactListener {
 
     public EntityManager getEntMan() {
         return entMan;
+    }
+
+    public int getTileWidth() {
+        return tileWidth;
+    }
+
+    public int getTileHeight() {
+        return tileHeight;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public void dispose() {

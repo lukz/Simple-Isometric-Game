@@ -23,10 +23,15 @@ public class TestMap extends Map {
 
         // Set player position according to position of Ellipse object added to collision layer
         player.transform(MapProcessor.getPlayerPosition(this, tileMap.getLayers().get("collision")));
+
+        tileWidth = (Integer)tileMap.getProperties().get("tilewidth");
+        tileHeight = (Integer)tileMap.getProperties().get("tileheight");
+        width = (Integer)tileMap.getProperties().get("width");
+        height = (Integer)tileMap.getProperties().get("height");
     }
 
     @Override
     public void dispose() {
-
+        tileMap.dispose();
     }
 }
