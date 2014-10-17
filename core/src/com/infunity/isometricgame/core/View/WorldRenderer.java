@@ -15,7 +15,6 @@ import com.infunity.isometricgame.core.View.EntityRenderers.CoinsRenderer;
 import com.infunity.isometricgame.core.View.EntityRenderers.PlayerRenderer;
 import com.infunity.isometricgame.shared.Model.Entities.Coin;
 import com.infunity.isometricgame.shared.Model.GameWorld;
-import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
 
 /**
  * Created by Lukasz on 2014-10-12.

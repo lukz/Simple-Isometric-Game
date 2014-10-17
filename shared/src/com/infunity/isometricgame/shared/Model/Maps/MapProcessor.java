@@ -12,8 +12,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 import com.infunity.isometricgame.shared.Model.Entities.Coin;
-import net.dermetfan.gdx.math.GeometryUtils;
-import net.dermetfan.gdx.physics.box2d.Box2DMapObjectParser;
+import com.infunity.isometricgame.shared.Utils.dermetfan.GeometryUtils;
 
 /**
  * Created by Lukasz on 2014-10-14.
