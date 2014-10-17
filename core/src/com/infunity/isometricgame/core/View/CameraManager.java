@@ -18,7 +18,7 @@ public class CameraManager {
 
     private Vector2 newCamPos = new Vector2(0, 0);
 
-    private boolean continuousMovement = false;
+    private boolean continuousMovement = true;
 
     public CameraManager(Map map) {
         this.player = map.getPlayer();

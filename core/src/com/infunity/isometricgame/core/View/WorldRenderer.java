@@ -3,6 +3,7 @@ package com.infunity.isometricgame.core.View;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricStaggeredTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
@@ -33,6 +34,8 @@ public class WorldRenderer {
 
     private EffectManager effectManager;
 
+    private BitmapFont font;
+
     public WorldRenderer(GameWorld world) {
         this.world = world;
 
@@ -49,6 +52,8 @@ public class WorldRenderer {
         coinsRenderer = new CoinsRenderer();
 
         effectManager = (EffectManager)world.getMap().getEffectManager();
+
+        font = IsometricGame.assets.get(IsometricGame.assets.DefaultFnt, BitmapFont.class);
     }
 
 
@@ -76,6 +81,11 @@ public class WorldRenderer {
         }
         effectManager.draw(batch);
         playerRenderer.render(batch);
+
+        // Draw game time
+        font.draw(batch, String.valueOf((int)world.getMap().getGameTime()) + " sec",
+                cameraManager.getCamera().position.x - cameraManager.getCamera().viewportWidth / 2 + 20,
+                cameraManager.getCamera().position.y + cameraManager.getCamera().viewportHeight / 2 - 20);
 
         batch.end();
 

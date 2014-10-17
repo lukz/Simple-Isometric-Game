@@ -2,6 +2,7 @@ package com.infunity.isometricgame.shared.Model;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 
 /**
@@ -15,6 +16,9 @@ public class Assets {
 
     // Particles
     public final String CoinPrt = "particles/coin.p";
+
+    // Fonts
+    public final String DefaultFnt = "font/default.fnt";
 
     private AssetManager manager;
 
@@ -32,6 +36,9 @@ public class Assets {
 
         // Particles
         manager.load(CoinPrt, ParticleEffect.class);
+
+        // Fonts
+        manager.load(DefaultFnt, BitmapFont.class);
     }
 
     public boolean update() {

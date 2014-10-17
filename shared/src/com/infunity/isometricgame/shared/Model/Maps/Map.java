@@ -30,6 +30,9 @@ public abstract class Map implements ContactListener {
     protected int width;
     protected int height;
 
+    // Time counter
+    protected float gameTime = 0;
+
     protected Map(Box2DWorld box2dworld, EffectsInterface effectManager) {
         this.box2dworld = box2dworld;
         this.effectManager = effectManager;
@@ -42,6 +45,8 @@ public abstract class Map implements ContactListener {
     }
 
     public void update(float delta) {
+        gameTime += delta;
+
         entMan.update(delta);
         player.update(delta);
     }
@@ -108,6 +113,10 @@ public abstract class Map implements ContactListener {
 
     public int getHeight() {
         return height;
+    }
+
+    public float getGameTime() {
+        return gameTime;
     }
 
     public void dispose() {
