@@ -1,7 +1,7 @@
 package com.infunity.isometricgame.shared.Model.Maps;
 
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.infunity.isometricgame.shared.EffectsInterface;
+import com.infunity.isometricgame.shared.Intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 
 /**

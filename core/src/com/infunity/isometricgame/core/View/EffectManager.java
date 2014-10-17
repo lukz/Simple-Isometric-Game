@@ -2,7 +2,7 @@ package com.infunity.isometricgame.core.View;
 
 import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.infunity.isometricgame.shared.EffectsInterface;
+import com.infunity.isometricgame.shared.Intefaces.EffectsInterface;
 
 /**
  * Created by Lukasz on 2014-10-15.

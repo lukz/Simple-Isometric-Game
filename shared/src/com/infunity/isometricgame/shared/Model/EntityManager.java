@@ -1,5 +1,6 @@
 package com.infunity.isometricgame.shared.Model;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 import com.infunity.isometricgame.shared.Model.Entities.Coin;
@@ -46,5 +47,9 @@ public class EntityManager {
     public void removeCoin(Coin coin) {
         coinEntities.removeValue(coin, true);
         coin.setFlagForDelete(true);
+    }
+
+    public int getCoinsLeft() {
+        return coinEntities.size;
     }
 }

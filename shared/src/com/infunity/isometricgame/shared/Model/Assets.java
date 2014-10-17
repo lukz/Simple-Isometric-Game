@@ -4,6 +4,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
  * Created by Lukasz on 2014-10-12.
@@ -19,6 +20,9 @@ public class Assets {
 
     // Fonts
     public final String DefaultFnt = "font/default.fnt";
+
+    // Skinks
+    public final String DefaultSkin = "skin/uiskin.json";
 
     private AssetManager manager;
 
@@ -39,6 +43,9 @@ public class Assets {
 
         // Fonts
         manager.load(DefaultFnt, BitmapFont.class);
+
+        // Skins
+        manager.load(DefaultSkin, Skin.class);
     }
 
     public boolean update() {

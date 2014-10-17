@@ -1,10 +1,9 @@
 package com.infunity.isometricgame.shared.Model.Entities;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.infunity.isometricgame.shared.EffectsInterface;
+import com.infunity.isometricgame.shared.Intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.Box2DWorld;
 import com.infunity.isometricgame.shared.Model.Maps.Map;
 import com.infunity.isometricgame.shared.Model.PhysicsObject;

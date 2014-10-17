@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared;
+package com.infunity.isometricgame.shared.Intefaces;
 
 /**
  * Created by Lukasz on 2014-10-15.

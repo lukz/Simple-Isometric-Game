@@ -7,7 +7,6 @@ import com.infunity.isometricgame.core.Input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.View.EffectManager;
 import com.infunity.isometricgame.core.View.ParticleManager;
-import com.infunity.isometricgame.shared.EffectsInterface;
 import com.infunity.isometricgame.shared.Model.GameWorld;
 import com.infunity.isometricgame.shared.Model.Maps.Map;
 import com.infunity.isometricgame.shared.Model.Maps.TestMap;
@@ -73,6 +72,10 @@ public class GameScreen implements Screen {
 		 * Render
 		 */
         render.render(delta);
+
+        if(world.getGameState() == GameWorld.GameState.GAME_FINISHED) {
+            game.setScreen(new FinishScreen(game, world.getMap().getGameTime()));
+        }
     }
 
     @Override
