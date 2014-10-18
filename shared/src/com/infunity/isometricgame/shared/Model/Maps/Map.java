@@ -37,7 +37,7 @@ public abstract class Map implements ContactListener {
         this.effectManager = effectManager;
         this.entMan = new EntityManager(this);
 
-        this.player = new Player(100, 0, 0, 0, 100, 50, box2dworld);
+        this.player = new Player(100, 0, 0, 0, 80, 40, 100, 50, box2dworld);
 
         // Pass all collisions through this class
         box2dworld.getWorld().setContactListener(this);

@@ -21,14 +21,21 @@ public class Player extends MovableEntity implements PhysicsObject {
     // Used to calculate output velocity
     private Vector2 velocity;
 
-    public Player(float speed, float rotation, float x, float y, float width, float height, Box2DWorld box2DWorld) {
-        super(speed, rotation, x, y, width, height);
+    private float spriteBoundingWidth = 0;
+    private float spriteBoundingHeight = 0;
 
-        this.body = box2DWorld.createPlayerBody(x, y, width, height, BodyDef.BodyType.DynamicBody, true);
+    public Player(float speed, float rotation, float x, float y, float boundingWidth, float boundingHeight,
+                  float spriteBoundingWidth, float spriteBoundingHeight, Box2DWorld box2DWorld) {
+        super(speed, rotation, x, y, boundingWidth, boundingHeight);
+
+        this.body = box2DWorld.createPlayerBody(x, y, boundingWidth, boundingHeight, BodyDef.BodyType.DynamicBody, true);
         this.body.setUserData(this);
 
         this.direction = new Vector2(0, 0);
         this.velocity = new Vector2(0, 0);
+
+        this.spriteBoundingWidth = spriteBoundingWidth;
+        this.spriteBoundingHeight = spriteBoundingHeight;
     }
 
     @Override
@@ -76,6 +83,14 @@ public class Player extends MovableEntity implements PhysicsObject {
     /** Sets player body position */
     public void transform(Vector2 newPos) {
         body.setTransform(newPos.x * Box2DWorld.WORLD_TO_BOX, newPos.y * Box2DWorld.WORLD_TO_BOX, 0);
+    }
+
+    public float getSpriteBoundingWidth() {
+        return spriteBoundingWidth;
+    }
+
+    public float getSpriteBoundingHeight() {
+        return spriteBoundingHeight;
     }
 
     @Override

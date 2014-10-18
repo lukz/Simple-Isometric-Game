@@ -20,8 +20,8 @@ public class PlayerRenderer {
     }
 
     public void render(SpriteBatch batch) {
-        spr.setPosition(player.getPositionX() - player.getWidth() / 2,
-                player.getPositionY() - player.getHeight() / 2);
+        spr.setPosition(player.getPositionX() - player.getSpriteBoundingWidth() / 2,
+                player.getPositionY() - player.getSpriteBoundingHeight() / 2);
         spr.draw(batch);
     }
 }
