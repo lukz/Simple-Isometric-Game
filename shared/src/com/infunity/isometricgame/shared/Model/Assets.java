@@ -19,7 +19,7 @@ public class Assets {
     public final String CoinPrt = "particles/coin.p";
 
     // Fonts
-    public final String DefaultFnt = "font/default.fnt";
+    public final String DefaultFnt = "skin/default.fnt";
 
     // Skinks
     public final String DefaultSkin = "skin/uiskin.json";

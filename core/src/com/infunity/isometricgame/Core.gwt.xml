@@ -10,5 +10,7 @@
 
     <inherits name="com.infunity.isometricgame.Shared"/>
 
+    <extend-configuration-property name="gdx.reflect.include" value="com.infunity.isometricgame.core.Utils.PlayerScore" />
+
     <source path="core" />
 </module>
