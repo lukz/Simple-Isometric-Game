@@ -1,6 +1,7 @@
 package com.infunity.isometricgame.shared.model;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
@@ -20,6 +21,10 @@ public class Assets {
 
     // Skinks
     public final String DefaultSkin = "skin/uiskin.json";
+
+    // Sounds
+    public final String CoinSound = "sounds/coin.ogg";
+    public final String FinishSound = "sounds/finish.ogg";
 
     private AssetManager manager;
 
@@ -43,6 +48,10 @@ public class Assets {
 
         // Skins
         manager.load(DefaultSkin, Skin.class);
+
+        // Sounds
+        manager.load(CoinSound, Sound.class);
+        manager.load(FinishSound, Sound.class);
     }
 
     public boolean update() {

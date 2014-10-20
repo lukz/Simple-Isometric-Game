@@ -2,6 +2,7 @@ package com.infunity.isometricgame.core.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
@@ -75,6 +76,7 @@ public class GameScreen implements Screen {
 
         if(world.getGameState() == GameWorld.GameState.GAME_FINISHED) {
             game.setScreen(new FinishScreen(game, world.getMap().getGameTime()));
+            IsometricGame.assets.get(IsometricGame.assets.FinishSound, Sound.class).play();
         }
     }
 
