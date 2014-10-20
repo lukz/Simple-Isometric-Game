@@ -42,7 +42,7 @@ public abstract class MovableEntity extends Entity {
      * @param speed the speed to set
      */
     public void setSpeed(float speed) {
-        speed = speed;
+        this.speed = speed;
     }
 
 }
