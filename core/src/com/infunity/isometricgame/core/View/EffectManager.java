@@ -20,6 +20,8 @@ public class EffectManager implements EffectsInterface {
             prt.setPosition(x, y);
 
             particleManager.addEffect(prt);
+        } else {
+            throw new IllegalArgumentException("Unknown effectType");
         }
     }
 
