@@ -14,9 +14,6 @@ import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.utils.dermetfan.GeometryUtils;
 
-/**
- * Created by Lukasz on 2014-10-14.
- */
 public class MapProcessor {
 
     public static void createGroundObjects(Map map, MapLayer layer, Box2DWorld world) {

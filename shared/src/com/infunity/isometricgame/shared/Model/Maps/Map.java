@@ -11,9 +11,6 @@ import com.infunity.isometricgame.shared.model.entities.Player;
 import com.infunity.isometricgame.shared.model.EntityManager;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public abstract class Map implements ContactListener {
 
     protected EntityManager entMan;

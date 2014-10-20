@@ -8,9 +8,6 @@ import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class Player extends MovableEntity implements PhysicsObject {
 
     private Body body;

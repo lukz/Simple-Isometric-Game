@@ -11,9 +11,6 @@ import com.infunity.isometricgame.core.view.entityRenderers.PlayerRenderer;
 import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.model.GameWorld;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class WorldRenderer {
 
     private GameWorld world;

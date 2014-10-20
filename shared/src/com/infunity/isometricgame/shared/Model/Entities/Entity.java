@@ -4,9 +4,6 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public abstract class Entity {
 
     protected Vector3 pos;

@@ -7,9 +7,6 @@ import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.model.entities.Player;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
-/**
- * Created by Lukasz on 2014-10-16.
- */
 public class CameraManager {
 
     private OrthographicCamera camera;

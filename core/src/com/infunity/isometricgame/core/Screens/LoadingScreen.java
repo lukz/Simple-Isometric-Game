@@ -3,9 +3,6 @@ package com.infunity.isometricgame.core.screens;
 import com.badlogic.gdx.Screen;
 import com.infunity.isometricgame.core.IsometricGame;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class LoadingScreen implements Screen {
 
     private IsometricGame game;

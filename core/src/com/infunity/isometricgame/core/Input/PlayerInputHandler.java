@@ -4,9 +4,6 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
-/**
- * Created by Lukasz on 2014-10-13.
- */
 public class PlayerInputHandler implements InputProcessor {
 
     private Map map;

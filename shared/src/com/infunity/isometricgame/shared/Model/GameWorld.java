@@ -2,9 +2,6 @@ package com.infunity.isometricgame.shared.model;
 
 import com.infunity.isometricgame.shared.model.maps.Map;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class GameWorld {
 
     private Map map;

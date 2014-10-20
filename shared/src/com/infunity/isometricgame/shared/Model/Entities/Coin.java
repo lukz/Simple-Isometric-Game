@@ -6,9 +6,6 @@ import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
 
-/**
- * Created by Lukasz on 2014-10-15.
- */
 public class Coin extends Entity implements PhysicsObject {
 
     public static final int COIN_WIDTH = 40;

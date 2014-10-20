@@ -4,9 +4,6 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 
-/**
- * Created by Lukasz on 2014-10-15.
- */
 public class EffectManager implements EffectsInterface {
 
     private ParticleManager particleManager;

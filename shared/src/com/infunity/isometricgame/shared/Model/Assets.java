@@ -6,9 +6,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class Assets {
 
     // Textures

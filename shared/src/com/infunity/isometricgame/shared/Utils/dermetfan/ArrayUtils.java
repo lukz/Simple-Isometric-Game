@@ -1,8 +1,5 @@
 package com.infunity.isometricgame.shared.utils.dermetfan;
 
-/**
- * Created by Lukasz on 2014-09-15.
- */
 /** Copyright 2014 Robin Stumm (serverkorken@gmail.com, http://dermetfan.net)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");

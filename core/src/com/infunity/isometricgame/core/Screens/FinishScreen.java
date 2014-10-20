@@ -16,9 +16,6 @@ import com.infunity.isometricgame.core.utils.PlayerScore;
 
 import java.util.Comparator;
 
-/**
- * Created by Lukasz on 2014-10-17.
- */
 public class FinishScreen implements Screen {
 
     private IsometricGame game;

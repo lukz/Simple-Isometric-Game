@@ -2,9 +2,6 @@ package com.infunity.isometricgame.shared.model.entities;
 
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public abstract class MovableEntity extends Entity {
 
     protected Vector2 velocity;

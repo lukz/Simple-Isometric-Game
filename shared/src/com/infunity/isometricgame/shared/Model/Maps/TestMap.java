@@ -4,9 +4,6 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class TestMap extends Map {
 
     public TestMap(Box2DWorld box2dworld, EffectsInterface effectManager) {

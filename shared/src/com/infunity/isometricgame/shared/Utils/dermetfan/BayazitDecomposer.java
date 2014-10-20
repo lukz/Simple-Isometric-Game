@@ -1,9 +1,5 @@
 package com.infunity.isometricgame.shared.utils.dermetfan;
 
-/**
- * Created by Lukasz on 2014-09-15.
- */
-
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 

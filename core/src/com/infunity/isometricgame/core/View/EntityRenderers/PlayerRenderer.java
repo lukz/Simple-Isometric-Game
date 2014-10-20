@@ -6,9 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.model.entities.Player;
 
-/**
- * Created by Lukasz on 2014-10-15.
- */
 public class PlayerRenderer {
 
     private Player player;

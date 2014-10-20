@@ -13,9 +13,6 @@ import com.infunity.isometricgame.shared.model.maps.TestMap;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.core.view.WorldRenderer;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class GameScreen implements Screen {
 
     private IsometricGame game;

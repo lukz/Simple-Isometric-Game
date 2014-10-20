@@ -5,9 +5,6 @@ import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.model.entities.Entity;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class EntityManager {
 
     private Array<Coin> coinEntities;

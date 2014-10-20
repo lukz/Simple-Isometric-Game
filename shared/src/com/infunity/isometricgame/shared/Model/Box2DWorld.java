@@ -7,9 +7,6 @@ import com.badlogic.gdx.utils.Array;
 
 import java.util.Iterator;
 
-/**
- * Created by Lukasz on 2014-10-12.
- */
 public class Box2DWorld {
 
     /*
