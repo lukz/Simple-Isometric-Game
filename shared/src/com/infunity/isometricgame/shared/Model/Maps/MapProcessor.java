@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Model.Maps;
+package com.infunity.isometricgame.shared.model.maps;
 
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
@@ -10,9 +10,9 @@ import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
-import com.infunity.isometricgame.shared.Model.Box2DWorld;
-import com.infunity.isometricgame.shared.Model.Entities.Coin;
-import com.infunity.isometricgame.shared.Utils.dermetfan.GeometryUtils;
+import com.infunity.isometricgame.shared.model.Box2DWorld;
+import com.infunity.isometricgame.shared.model.entities.Coin;
+import com.infunity.isometricgame.shared.utils.dermetfan.GeometryUtils;
 
 /**
  * Created by Lukasz on 2014-10-14.

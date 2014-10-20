@@ -1,17 +1,17 @@
-package com.infunity.isometricgame.core.Screens;
+package com.infunity.isometricgame.core.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector2;
-import com.infunity.isometricgame.core.Input.PlayerInputHandler;
+import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.core.View.EffectManager;
-import com.infunity.isometricgame.core.View.ParticleManager;
-import com.infunity.isometricgame.shared.Model.GameWorld;
-import com.infunity.isometricgame.shared.Model.Maps.Map;
-import com.infunity.isometricgame.shared.Model.Maps.TestMap;
-import com.infunity.isometricgame.shared.Model.Box2DWorld;
-import com.infunity.isometricgame.core.View.WorldRenderer;
+import com.infunity.isometricgame.core.view.EffectManager;
+import com.infunity.isometricgame.core.view.ParticleManager;
+import com.infunity.isometricgame.shared.model.GameWorld;
+import com.infunity.isometricgame.shared.model.maps.Map;
+import com.infunity.isometricgame.shared.model.maps.TestMap;
+import com.infunity.isometricgame.shared.model.Box2DWorld;
+import com.infunity.isometricgame.core.view.WorldRenderer;
 
 /**
  * Created by Lukasz on 2014-10-12.

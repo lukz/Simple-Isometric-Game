@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Model;
+package com.infunity.isometricgame.shared.model;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;

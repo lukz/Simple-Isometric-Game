@@ -1,10 +1,10 @@
-package com.infunity.isometricgame.shared.Model.Entities;
+package com.infunity.isometricgame.shared.model.entities;
 
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.infunity.isometricgame.shared.Model.Box2DWorld;
-import com.infunity.isometricgame.shared.Model.Maps.Map;
-import com.infunity.isometricgame.shared.Model.PhysicsObject;
+import com.infunity.isometricgame.shared.model.Box2DWorld;
+import com.infunity.isometricgame.shared.model.maps.Map;
+import com.infunity.isometricgame.shared.model.PhysicsObject;
 
 /**
  * Created by Lukasz on 2014-10-15.

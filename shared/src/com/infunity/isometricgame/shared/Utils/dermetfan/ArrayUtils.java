@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Utils.dermetfan;
+package com.infunity.isometricgame.shared.utils.dermetfan;
 
 /**
  * Created by Lukasz on 2014-09-15.

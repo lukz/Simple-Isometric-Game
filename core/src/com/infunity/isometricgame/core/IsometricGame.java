@@ -2,8 +2,8 @@ package com.infunity.isometricgame.core;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.FPSLogger;
-import com.infunity.isometricgame.shared.Model.Assets;
-import com.infunity.isometricgame.core.Screens.LoadingScreen;
+import com.infunity.isometricgame.shared.model.Assets;
+import com.infunity.isometricgame.core.screens.LoadingScreen;
 
 public class IsometricGame extends Game {
 

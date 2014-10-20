@@ -1,15 +1,15 @@
-package com.infunity.isometricgame.shared.Model.Maps;
+package com.infunity.isometricgame.shared.model.maps;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
-import com.infunity.isometricgame.shared.Intefaces.EffectsInterface;
-import com.infunity.isometricgame.shared.Model.Box2DWorld;
-import com.infunity.isometricgame.shared.Model.Entities.Player;
-import com.infunity.isometricgame.shared.Model.EntityManager;
-import com.infunity.isometricgame.shared.Model.PhysicsObject;
+import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
+import com.infunity.isometricgame.shared.model.Box2DWorld;
+import com.infunity.isometricgame.shared.model.entities.Player;
+import com.infunity.isometricgame.shared.model.EntityManager;
+import com.infunity.isometricgame.shared.model.PhysicsObject;
 
 /**
  * Created by Lukasz on 2014-10-12.

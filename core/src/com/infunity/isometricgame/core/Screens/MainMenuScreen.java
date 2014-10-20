@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.core.Screens;
+package com.infunity.isometricgame.core.screens;
 
 import com.badlogic.gdx.Screen;
 import com.infunity.isometricgame.core.IsometricGame;

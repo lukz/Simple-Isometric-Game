@@ -1,20 +1,15 @@
-package com.infunity.isometricgame.core.View;
+package com.infunity.isometricgame.core.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.IsometricStaggeredTiledMapRenderer;
-import com.badlogic.gdx.maps.tiled.renderers.IsometricTiledMapRenderer;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.core.View.EntityRenderers.CoinsRenderer;
-import com.infunity.isometricgame.core.View.EntityRenderers.PlayerRenderer;
-import com.infunity.isometricgame.shared.Model.Entities.Coin;
-import com.infunity.isometricgame.shared.Model.GameWorld;
+import com.infunity.isometricgame.core.view.entityRenderers.CoinsRenderer;
+import com.infunity.isometricgame.core.view.entityRenderers.PlayerRenderer;
+import com.infunity.isometricgame.shared.model.entities.Coin;
+import com.infunity.isometricgame.shared.model.GameWorld;
 
 /**
  * Created by Lukasz on 2014-10-12.

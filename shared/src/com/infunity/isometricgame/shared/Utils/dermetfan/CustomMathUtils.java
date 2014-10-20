@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Utils.dermetfan;
+package com.infunity.isometricgame.shared.utils.dermetfan;
 
 /** Copyright 2014 Robin Stumm (serverkorken@gmail.com, http://dermetfan.net)
  *

@@ -1,6 +1,5 @@
-package com.infunity.isometricgame.core.View;
+package com.infunity.isometricgame.core.view;
 
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.ParticleEffectPool;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

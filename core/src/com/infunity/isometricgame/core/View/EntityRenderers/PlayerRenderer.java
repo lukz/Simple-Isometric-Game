@@ -1,10 +1,10 @@
-package com.infunity.isometricgame.core.View.EntityRenderers;
+package com.infunity.isometricgame.core.view.entityRenderers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.shared.Model.Entities.Player;
+import com.infunity.isometricgame.shared.model.entities.Player;
 
 /**
  * Created by Lukasz on 2014-10-15.

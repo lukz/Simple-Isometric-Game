@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.core.Screens;
+package com.infunity.isometricgame.core.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.core.Utils.PlayerScore;
+import com.infunity.isometricgame.core.utils.PlayerScore;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Model.Entities;
+package com.infunity.isometricgame.shared.model.entities;
 
 import com.badlogic.gdx.math.Vector2;
 

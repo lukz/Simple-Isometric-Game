@@ -1,11 +1,9 @@
-package com.infunity.isometricgame.shared.Model;
+package com.infunity.isometricgame.shared.model;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
-import com.infunity.isometricgame.shared.Model.Entities.Coin;
-import com.infunity.isometricgame.shared.Model.Entities.Entity;
-import com.infunity.isometricgame.shared.Model.Maps.Map;
+import com.infunity.isometricgame.shared.model.entities.Coin;
+import com.infunity.isometricgame.shared.model.entities.Entity;
+import com.infunity.isometricgame.shared.model.maps.Map;
 
 /**
  * Created by Lukasz on 2014-10-12.

@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.shared.Utils.dermetfan;
+package com.infunity.isometricgame.shared.utils.dermetfan;
 
 /** Copyright 2014 Robin Stumm (serverkorken@gmail.com, http://dermetfan.net)
  *
@@ -30,8 +30,8 @@ package com.infunity.isometricgame.shared.Utils.dermetfan;
         import com.badlogic.gdx.utils.Pools;
         import com.badlogic.gdx.utils.ShortArray;
 
-        import static com.infunity.isometricgame.shared.Utils.dermetfan.ArrayUtils.wrapIndex;
-        import static com.infunity.isometricgame.shared.Utils.dermetfan.CustomMathUtils.*;
+        import static com.infunity.isometricgame.shared.utils.dermetfan.ArrayUtils.wrapIndex;
+        import static com.infunity.isometricgame.shared.utils.dermetfan.CustomMathUtils.*;
 
 /** Provides some useful methods for geometric calculations. Note that many methods return the same array instance so make a copy for subsequent calls.
  *  @author dermetfan */

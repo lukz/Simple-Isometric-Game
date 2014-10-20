@@ -1,4 +1,4 @@
-package com.infunity.isometricgame.core.Utils;
+package com.infunity.isometricgame.core.utils;
 
 /**
  * Created by Lukasz on 2014-10-17.

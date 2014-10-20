@@ -1,8 +1,8 @@
-package com.infunity.isometricgame.core.Input;
+package com.infunity.isometricgame.core.input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
-import com.infunity.isometricgame.shared.Model.Maps.Map;
+import com.infunity.isometricgame.shared.model.maps.Map;
 
 /**
  * Created by Lukasz on 2014-10-13.

@@ -1,11 +1,11 @@
-package com.infunity.isometricgame.core.View;
+package com.infunity.isometricgame.core.view;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.shared.Model.Entities.Player;
-import com.infunity.isometricgame.shared.Model.Maps.Map;
+import com.infunity.isometricgame.shared.model.entities.Player;
+import com.infunity.isometricgame.shared.model.maps.Map;
 
 /**
  * Created by Lukasz on 2014-10-16.
