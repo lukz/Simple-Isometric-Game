@@ -18,7 +18,7 @@ public class Box2DWorld {
     private World world;
     private Box2DDebugRenderer renderer;
 
-    // Array used to sweep dead bodies
+    /** Array used to sweep dead bodies */
     private Array<Body> bodies;
 
     public Box2DWorld(Vector2 gravity) {

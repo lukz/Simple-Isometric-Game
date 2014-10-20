@@ -13,7 +13,7 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        // If assets loaded go to MainMenu
+        /** If assets loaded go to MainMenu */
         if(game.assets.update()) {
             game.setScreen(new MainMenuScreen(game));
         }

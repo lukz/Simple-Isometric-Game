@@ -12,10 +12,10 @@ public class Player extends MovableEntity implements PhysicsObject {
 
     private Body body;
 
-    // Used to store input keys
+    /** Used to store input keys */
     private Vector2 direction;
 
-    // Used to calculate output velocity
+    /** Used to calculate output velocity */
     private Vector2 velocity;
 
     private float spriteBoundingWidth = 0;

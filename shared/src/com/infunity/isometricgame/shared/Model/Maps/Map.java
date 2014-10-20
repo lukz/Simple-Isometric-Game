@@ -26,7 +26,7 @@ public abstract class Map implements ContactListener {
     protected int width;
     protected int height;
 
-    // Time counter
+    /** Time counter */
     protected float gameTime = 0;
 
     protected Map(Box2DWorld box2dworld, EffectsInterface effectManager) {

@@ -17,8 +17,11 @@ public class GameScreen implements Screen {
 
     private IsometricGame game;
 
-    private GameWorld world; // Logic
-    private WorldRenderer render; // Renderer
+    /** Logic */
+    private GameWorld world;
+
+    /** Renderer */
+    private WorldRenderer render;
     private Box2DWorld box2dworld;
     private Map map;
 
