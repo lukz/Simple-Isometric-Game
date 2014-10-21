@@ -5,6 +5,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
+import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
 public class TestMap extends Map {
 
@@ -27,6 +28,34 @@ public class TestMap extends Map {
         tileHeight = (Integer)tileMap.getProperties().get("tileheight");
         width = (Integer)tileMap.getProperties().get("width");
         height = (Integer)tileMap.getProperties().get("height");
+    }
+
+    /*
+     * Creating map from MapDescriptor object. Used to load saved game.
+     */
+    public TestMap(MapDescriptor mapDesc, Box2DWorld box2dworld, EffectsInterface effectManager) {
+        super(box2dworld, effectManager);
+
+        // Load map file with tileset
+        tileMap = new TmxMapLoader().load("testmap.tmx");
+
+        // Create Polygon objects from "collision" object layer
+        MapProcessor.createGroundObjects(this, tileMap.getLayers().get("collision"), box2dworld);
+
+        // Create coins
+        MapProcessor.createCoinsFromMapDesc(this, mapDesc, box2dworld);
+
+        // Set player position
+        player.transform(mapDesc.getPlayerPos());
+
+        // Set gameTime
+        gameTime = mapDesc.getGameTime();
+
+        tileWidth = (Integer)tileMap.getProperties().get("tilewidth");
+        tileHeight = (Integer)tileMap.getProperties().get("tileheight");
+        width = (Integer)tileMap.getProperties().get("width");
+        height = (Integer)tileMap.getProperties().get("height");
+
     }
 
     @Override

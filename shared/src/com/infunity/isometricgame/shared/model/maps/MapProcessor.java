@@ -12,6 +12,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.entities.Coin;
+import com.infunity.isometricgame.shared.utils.MapDescriptor;
 import com.infunity.isometricgame.shared.utils.dermetfan.GeometryUtils;
 
 public class MapProcessor {
@@ -48,6 +49,19 @@ public class MapProcessor {
                 map.getEntMan().addCoin(newCoin);
 
             }
+        }
+    }
+
+    /*
+     * Load coins from MapDescriptor.
+     */
+    public static void createCoinsFromMapDesc(Map map, MapDescriptor mapDesc, Box2DWorld world) {
+        for(Vector2 coinPos : mapDesc.getCoinsPos()) {
+            // Create new Coin
+            Coin newCoin = new Coin(coinPos.x, coinPos.y, world);
+
+            // Add Coin entity to EntityManager
+            map.getEntMan().addCoin(newCoin);
         }
     }
 

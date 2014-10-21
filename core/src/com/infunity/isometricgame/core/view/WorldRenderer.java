@@ -98,7 +98,7 @@ public class WorldRenderer {
         // Render obstacle tiles with check for every tile if player should be rendered before
         tiledMapRenderer.renderTileLayer(obstacleLayer, playerRenderer, playersToRender);
 
-        // Render rest players (below any obstacle)
+        // Render rest of players (below any obstacle)
         for(Player player : playersToRender) {
             playerRenderer.render(batch, player);
         }

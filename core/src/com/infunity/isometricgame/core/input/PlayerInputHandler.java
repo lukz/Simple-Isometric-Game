@@ -3,9 +3,12 @@ package com.infunity.isometricgame.core.input;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
+import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.model.PlayerNavigator;
+import com.infunity.isometricgame.core.utils.SaveGame;
 import com.infunity.isometricgame.core.view.WorldRenderer;
 import com.infunity.isometricgame.shared.model.maps.Map;
+import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
 public class PlayerInputHandler implements InputProcessor {
 
@@ -14,11 +17,14 @@ public class PlayerInputHandler implements InputProcessor {
 
     private PlayerNavigator playerNav;
 
-    public PlayerInputHandler(Map map, WorldRenderer renderer, PlayerNavigator playerNav) {
+    private IsometricGame game;
+
+    public PlayerInputHandler(Map map, WorldRenderer renderer, PlayerNavigator playerNav, IsometricGame game) {
         this.map = map;
         this.renderer = renderer;
 
         this.playerNav = playerNav;
+        this.game = game;
     }
 
     @Override
@@ -63,6 +69,13 @@ public class PlayerInputHandler implements InputProcessor {
             case Input.Keys.DOWN:
                 if(map.getPlayer().getDirection().y == -1)
                     map.getPlayer().getDirection().y = 0;
+                return true;
+
+            case Input.Keys.S:
+                SaveGame.saveGame(map);
+                return true;
+            case Input.Keys.L:
+                SaveGame.loadGame();
                 return true;
         }
 

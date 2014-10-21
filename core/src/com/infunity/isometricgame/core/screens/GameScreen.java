@@ -17,7 +17,7 @@ import com.infunity.isometricgame.core.view.WorldRenderer;
 
 public class GameScreen implements Screen {
 
-    private IsometricGame game;
+    public IsometricGame game;
 
     /** Logic */
     private GameWorld world;
@@ -47,7 +47,24 @@ public class GameScreen implements Screen {
 
         playerNav = new PlayerNavigator(map.getPlayer());
 
-        Gdx.input.setInputProcessor(new PlayerInputHandler(map, render, playerNav));
+        Gdx.input.setInputProcessor(new PlayerInputHandler(map, render, playerNav, game));
+    }
+
+    /*
+     * Load game
+     */
+    public GameScreen(IsometricGame game, Map map, Box2DWorld box2DWorld) {
+        this.game = game;
+
+        this.box2dworld = box2DWorld;
+        this.map = map;
+
+        world = new GameWorld(this.box2dworld, this.map);
+        render = new WorldRenderer(world);
+
+        playerNav = new PlayerNavigator(this.map.getPlayer());
+
+        Gdx.input.setInputProcessor(new PlayerInputHandler(this.map, render, playerNav, game));
     }
 
     @Override
