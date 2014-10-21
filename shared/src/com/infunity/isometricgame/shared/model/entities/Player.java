@@ -15,6 +15,9 @@ public class Player extends MovableEntity implements PhysicsObject {
     /** Used to store input keys */
     private Vector2 direction;
 
+    /** Used to know if player is navigated by client */
+    private boolean navigated = false;
+
     /** Used to calculate output velocity */
     private Vector2 velocity;
 
@@ -47,7 +50,13 @@ public class Player extends MovableEntity implements PhysicsObject {
 
     @Override
     public void handleBeginContact(PhysicsObject psycho2, Map map) {
-
+        if(psycho2 instanceof  Map) {
+            // Stop navigation on collision
+            if(navigated) {
+                navigated = false;
+                direction.set(0, 0);
+            }
+        }
 
         if(psycho2 instanceof Coin) {
             Coin coin = (Coin)psycho2;
@@ -88,6 +97,14 @@ public class Player extends MovableEntity implements PhysicsObject {
 
     public float getSpriteBoundingHeight() {
         return spriteBoundingHeight;
+    }
+
+    public boolean isNavigated() {
+        return navigated;
+    }
+
+    public void setNavigated(boolean navigated) {
+        this.navigated = navigated;
     }
 
     @Override

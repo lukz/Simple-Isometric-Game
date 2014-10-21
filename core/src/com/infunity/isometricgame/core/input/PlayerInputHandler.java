@@ -2,29 +2,42 @@ package com.infunity.isometricgame.core.input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.math.Vector3;
+import com.infunity.isometricgame.core.model.PlayerNavigator;
+import com.infunity.isometricgame.core.view.WorldRenderer;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
 public class PlayerInputHandler implements InputProcessor {
 
     private Map map;
+    private WorldRenderer renderer;
 
-    public PlayerInputHandler(Map map) {
+    private PlayerNavigator playerNav;
+
+    public PlayerInputHandler(Map map, WorldRenderer renderer, PlayerNavigator playerNav) {
         this.map = map;
+        this.renderer = renderer;
+
+        this.playerNav = playerNav;
     }
 
     @Override
     public boolean keyDown(int keycode) {
         switch(keycode){
             case Input.Keys.LEFT:
+                playerNav.stopNavigation();
                 map.getPlayer().getDirection().x = -1;
                 return true;
             case Input.Keys.RIGHT:
+                playerNav.stopNavigation();
                 map.getPlayer().getDirection().x = 1;
                 return true;
             case Input.Keys.UP:
+                playerNav.stopNavigation();
                 map.getPlayer().getDirection().y = 1;
                 return true;
             case Input.Keys.DOWN:
+                playerNav.stopNavigation();
                 map.getPlayer().getDirection().y = -1;
                 return true;
         }
@@ -66,9 +79,16 @@ public class PlayerInputHandler implements InputProcessor {
         return false;
     }
 
+    private Vector3 tempVec3 = new Vector3();
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
+        // Translate screen coordinates to world coordinates
+        tempVec3.set(screenX, screenY, 0);
+        tempVec3 = renderer.getCameraManager().getCamera().unproject(tempVec3);
+
+        playerNav.navigatePlayerTo(tempVec3.x, tempVec3.y);
+
+        return true;
     }
 
     @Override

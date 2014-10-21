@@ -1,17 +1,14 @@
 package com.infunity.isometricgame.shared.model.maps;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.ContactImpulse;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.physics.box2d.*;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.entities.Player;
 import com.infunity.isometricgame.shared.model.EntityManager;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
 
-public abstract class Map implements ContactListener {
+public abstract class Map implements PhysicsObject {
 
     protected EntityManager entMan;
 
@@ -36,8 +33,7 @@ public abstract class Map implements ContactListener {
 
         this.player = new Player(100, 0, 0, 0, 80, 40, 100, 50, box2dworld);
 
-        // Pass all collisions through this class
-        box2dworld.getWorld().setContactListener(this);
+
     }
 
     public void update(float delta) {
@@ -47,36 +43,30 @@ public abstract class Map implements ContactListener {
         player.update(delta);
     }
 
+    @Override
+    public void handleBeginContact(PhysicsObject psycho2, Map map) {
+
+    }
+
+    @Override
+    public Body getBody() {
+        // Not used
+        return null;
+    }
+
+    @Override
+    public boolean getFlagForDelete() {
+        // Not used
+        return false;
+    }
+
+    @Override
+    public void setFlagForDelete(boolean flag) {
+        // Not used
+    }
+
     public void resetGame() {
         entMan.reset();
-    }
-
-    @Override
-    public void beginContact(Contact contact) {
-        Object ent1 = contact.getFixtureA().getBody().getUserData();
-        Object ent2 = contact.getFixtureB().getBody().getUserData();
-
-        if(!(ent1 instanceof PhysicsObject) || !(ent2 instanceof PhysicsObject)) {
-            return;
-        }
-
-        PhysicsObject physo1 = (PhysicsObject)ent1;
-        PhysicsObject physo2 = (PhysicsObject)ent2;
-
-        physo1.handleBeginContact(physo2, this);
-        physo2.handleBeginContact(physo1, this);
-    }
-
-    @Override
-    public void endContact(Contact contact) {
-    }
-
-    @Override
-    public void preSolve(Contact contact, Manifold oldManifold) {
-    }
-
-    @Override
-    public void postSolve(Contact contact, ContactImpulse impulse) {
     }
 
     public Player getPlayer() {

@@ -6,6 +6,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
+import com.infunity.isometricgame.core.model.PlayerNavigator;
 import com.infunity.isometricgame.core.view.EffectManager;
 import com.infunity.isometricgame.core.view.ParticleManager;
 import com.infunity.isometricgame.shared.model.GameWorld;
@@ -20,6 +21,8 @@ public class GameScreen implements Screen {
 
     /** Logic */
     private GameWorld world;
+
+    private PlayerNavigator playerNav;
 
     /** Renderer */
     private WorldRenderer render;
@@ -42,7 +45,9 @@ public class GameScreen implements Screen {
         world = new GameWorld(box2dworld, map);
         render = new WorldRenderer(world);
 
-        Gdx.input.setInputProcessor(new PlayerInputHandler(map));
+        playerNav = new PlayerNavigator(map.getPlayer());
+
+        Gdx.input.setInputProcessor(new PlayerInputHandler(map, render, playerNav));
     }
 
     @Override
@@ -73,6 +78,11 @@ public class GameScreen implements Screen {
 		 * Render
 		 */
         render.render(delta);
+
+        /*
+         * Client things
+         */
+        playerNav.update();
 
         if(world.getGameState() == GameWorld.GameState.GAME_FINISHED) {
             game.setScreen(new FinishScreen(game, world.getMap().getGameTime()));

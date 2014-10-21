@@ -1,8 +1,12 @@
 package com.infunity.isometricgame.shared.model;
 
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Manifold;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
-public class GameWorld {
+public class GameWorld implements ContactListener {
 
     private Map map;
     private Box2DWorld box2dworld;
@@ -17,6 +21,8 @@ public class GameWorld {
         this.box2dworld = box2dworld;
         this.map = map;
 
+        // Pass all collisions through this class
+        box2dworld.getWorld().setContactListener(this);
     }
 
     public void resetGame() {
@@ -30,6 +36,35 @@ public class GameWorld {
         if(map.getEntMan().getCoinsLeft() == 0) {
             gameState = GameState.GAME_FINISHED;
         }
+    }
+
+
+    @Override
+    public void beginContact(Contact contact) {
+        Object ent1 = contact.getFixtureA().getBody().getUserData();
+        Object ent2 = contact.getFixtureB().getBody().getUserData();
+
+        if(!(ent1 instanceof PhysicsObject) || !(ent2 instanceof PhysicsObject)) {
+            return;
+        }
+
+        PhysicsObject physo1 = (PhysicsObject)ent1;
+        PhysicsObject physo2 = (PhysicsObject)ent2;
+
+        physo1.handleBeginContact(physo2, map);
+        physo2.handleBeginContact(physo1, map);
+    }
+
+    @Override
+    public void endContact(Contact contact) {
+    }
+
+    @Override
+    public void preSolve(Contact contact, Manifold oldManifold) {
+    }
+
+    @Override
+    public void postSolve(Contact contact, ContactImpulse impulse) {
     }
 
     public Map getMap() {

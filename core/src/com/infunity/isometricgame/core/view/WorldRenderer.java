@@ -90,6 +90,10 @@ public class WorldRenderer {
 
     }
 
+    public CameraManager getCameraManager() {
+        return cameraManager;
+    }
+
     public void dispose() {
     }
 }
