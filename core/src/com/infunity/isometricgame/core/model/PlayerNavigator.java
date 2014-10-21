@@ -52,8 +52,7 @@ public class PlayerNavigator {
     public void stopNavigation() {
         if(coordinatesSet) {
             coordinatesSet = false;
-            player.getDirection().x = 0;
-            player.getDirection().y = 0;
+            player.getDirection().set(0, 0);
 
             player.setNavigated(false);
         }
