@@ -16,14 +16,12 @@ import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
 public class SaveGame {
 
+    private static Preferences prefs = Gdx.app.getPreferences("isometricgame_prefs");
+    private static Json json = new Json();
+
     public static void saveGame(Map map) {
         MapDescriptor mapDesc = new MapDescriptor();
         mapDesc.setMapDescriptor(map);
-
-        // Serialize map descriptor
-        Json json = new Json();
-
-        Preferences prefs = Gdx.app.getPreferences("isometricgame_prefs");
 
         Array<MapDescriptor> saveGames;
 
@@ -42,16 +40,31 @@ public class SaveGame {
         prefs.flush();
     }
 
-    public static void loadGame(IsometricGame game) {
-        Json json = new Json();
+    public static Array<MapDescriptor> getSaveGames() {
+        Array<MapDescriptor> saveGames;
 
-        Preferences prefs = Gdx.app.getPreferences("isometricgame_prefs");
+        if(prefs.getString("saveGame", null) != null) {
+            saveGames = json.fromJson(Array.class, prefs.getString("saveGame"));
+        } else {
+            saveGames = new Array<MapDescriptor>();
+        }
 
-        Array<MapDescriptor> saveGames = json.fromJson(Array.class, prefs.getString("saveGame"));
+        return saveGames;
+    }
 
+    public static void deleteSaveGame(int id) {
+        Array<MapDescriptor> saveGames = getSaveGames();
+
+        if(id < saveGames.size) {
+            saveGames.removeIndex(id);
+            prefs.putString("saveGame", json.toJson(saveGames, Array.class));
+            prefs.flush();
+        }
+    }
+
+    public static void loadGame(IsometricGame game, MapDescriptor mapDesc) {
         Box2DWorld box2dworld = new Box2DWorld(new Vector2(0, 0));
-        Map map = new TestMap(saveGames.get(saveGames.size - 1), box2dworld, new EffectManager(new ParticleManager()));
-
+        Map map = new TestMap(mapDesc, box2dworld, new EffectManager(new ParticleManager()));
 
         game.setScreen(new GameScreen(game, map, box2dworld));
     }
