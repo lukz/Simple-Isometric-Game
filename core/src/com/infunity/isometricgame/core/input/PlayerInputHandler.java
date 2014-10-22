@@ -75,7 +75,7 @@ public class PlayerInputHandler implements InputProcessor {
                 SaveGame.saveGame(map);
                 return true;
             case Input.Keys.L:
-                SaveGame.loadGame();
+                SaveGame.loadGame(game);
                 return true;
         }
 
