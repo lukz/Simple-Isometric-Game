@@ -56,6 +56,14 @@ public class CameraManager {
         return false;
     }
 
+    public boolean isContinuousMovement() {
+        return continuousMovement;
+    }
+
+    public void setContinuousMovement(boolean continuousMovement) {
+        this.continuousMovement = continuousMovement;
+    }
+
     public OrthographicCamera getCamera() {
         return camera;
     }

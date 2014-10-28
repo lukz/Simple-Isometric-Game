@@ -12,7 +12,7 @@ public class GameWorld implements ContactListener {
     private Box2DWorld box2dworld;
 
     public enum GameState {
-        GAME_STARTED, GAME_FINISHED
+        GAME_STARTED, GAME_PAUSED, GAME_FINISHED
     }
 
     private GameState gameState = GameState.GAME_STARTED;
@@ -77,6 +77,10 @@ public class GameWorld implements ContactListener {
 
     public GameState getGameState() {
         return gameState;
+    }
+
+    public void setGameState(GameState gameState) {
+        this.gameState = gameState;
     }
 
     public void dispose() {
