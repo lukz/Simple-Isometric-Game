@@ -10,10 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.model.PlayerNavigator;
-import com.infunity.isometricgame.core.view.EffectManager;
-import com.infunity.isometricgame.core.view.EscapeWindow;
-import com.infunity.isometricgame.core.view.ParticleManager;
-import com.infunity.isometricgame.core.view.WorldRenderer;
+import com.infunity.isometricgame.core.view.*;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.GameWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
@@ -58,9 +55,14 @@ public class GameScreen implements Screen {
         playerNav = new PlayerNavigator(map.getPlayer());
 
         stage = new Stage();
-        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render, game);
+        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, game);
         stage.addActor(escapeDialog);
         escapeDialog.setVisible(false);
+
+        CameraSelectBox camSelectBox = new CameraSelectBox(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), render);
+        camSelectBox.setPosition(IsometricGame.TARGET_WIDTH - camSelectBox.getWidth() - 10,
+                IsometricGame.TARGET_HEIGHT - 50);
+        stage.addActor(camSelectBox);
 
         Gdx.input.setInputProcessor(new InputMultiplexer(stage,
                 new PlayerInputHandler(this.map, world, render, playerNav)));
@@ -81,7 +83,7 @@ public class GameScreen implements Screen {
         playerNav = new PlayerNavigator(this.map.getPlayer());
 
         stage = new Stage();
-        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render, game);
+        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, game);
         stage.addActor(escapeDialog);
         escapeDialog.setVisible(false);
 
@@ -126,13 +128,12 @@ public class GameScreen implements Screen {
          */
         playerNav.update();
 
+        stage.act(delta);
+        stage.draw();
         if(world.getGameState() == GameWorld.GameState.GAME_PAUSED) {
             if(!escapeDialog.isVisible()) {
                 escapeDialog.setVisible(true);
             }
-
-            stage.act(delta);
-            stage.draw();
         }
 
         if(world.getGameState() == GameWorld.GameState.GAME_FINISHED) {

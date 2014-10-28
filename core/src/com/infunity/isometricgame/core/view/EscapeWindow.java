@@ -16,13 +16,11 @@ import com.infunity.isometricgame.shared.model.GameWorld;
 public class EscapeWindow extends Window {
 
     private GameWorld world;
-    private WorldRenderer renderer;
 
-    public EscapeWindow(Skin skin, Stage stage, GameWorld gameWorld, WorldRenderer worldRenderer, final IsometricGame game) {
+    public EscapeWindow(Skin skin, Stage stage, GameWorld gameWorld, final IsometricGame game) {
         super("", skin);
 
         this.world = gameWorld;
-        this.renderer = worldRenderer;
 
         TextButton exitButton = new TextButton("Exit", skin);
         exitButton.addListener(new ChangeListener() {
@@ -52,24 +50,24 @@ public class EscapeWindow extends Window {
             }
         });
 
-        final SelectBox cameraSelectBox = new SelectBox(skin);
-        cameraSelectBox.setItems(new String("Character moves"), new String("Map moves"));
-        cameraSelectBox.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                if(cameraSelectBox.getSelectedIndex() == 0) {
-                    renderer.getCameraManager().setContinuousMovement(true);
-                } else {
-                    renderer.getCameraManager().setContinuousMovement(false);
-                }
-            }
-        });
-
-        if(renderer.getCameraManager().isContinuousMovement()) {
-            cameraSelectBox.setSelectedIndex(0);
-        } else {
-            cameraSelectBox.setSelectedIndex(1);
-        }
+//        final SelectBox cameraSelectBox = new SelectBox(skin);
+//        cameraSelectBox.setItems(new String("Character moves"), new String("Map moves"));
+//        cameraSelectBox.addListener(new ChangeListener() {
+//            @Override
+//            public void changed(ChangeEvent event, Actor actor) {
+//                if(cameraSelectBox.getSelectedIndex() == 0) {
+//                    renderer.getCameraManager().setContinuousMovement(true);
+//                } else {
+//                    renderer.getCameraManager().setContinuousMovement(false);
+//                }
+//            }
+//        });
+//
+//        if(renderer.getCameraManager().isContinuousMovement()) {
+//            cameraSelectBox.setSelectedIndex(0);
+//        } else {
+//            cameraSelectBox.setSelectedIndex(1);
+//        }
 
         setMovable(false);
 
@@ -80,7 +78,7 @@ public class EscapeWindow extends Window {
         buttonTable.add(resumeButton).pad(5);
 
         // Add everything to window
-        add(cameraSelectBox).row();
+//        add(cameraSelectBox).row();
 
         add("Do you want to exit game?").padTop(10);;
         row();
