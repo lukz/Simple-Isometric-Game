@@ -31,6 +31,8 @@ public class FinishScreen implements Screen {
 
     private Preferences prefs;
 
+    private float timer = 0;
+
     public FinishScreen(IsometricGame game, float gameTime) {
         this.game = game;
         this.gameTime = gameTime;
@@ -136,6 +138,12 @@ public class FinishScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        timer += delta;
+        if(timer > 5) {
+            game.setScreen(new MainMenuScreen(game));
+        }
+
+
         // Clear screen
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
