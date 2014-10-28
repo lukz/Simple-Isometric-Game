@@ -3,6 +3,9 @@ package com.infunity.isometricgame.core.screens;
 import com.badlogic.gdx.Screen;
 import com.infunity.isometricgame.core.IsometricGame;
 
+/**
+ * Loading screen used to show something to player while loading assets
+ */
 public class LoadingScreen implements Screen {
 
     private IsometricGame game;

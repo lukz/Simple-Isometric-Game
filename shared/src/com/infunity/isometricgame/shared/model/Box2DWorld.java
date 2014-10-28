@@ -7,6 +7,9 @@ import com.badlogic.gdx.utils.Array;
 
 import java.util.Iterator;
 
+/**
+ * Class that contains and manages Box2D World object
+ */
 public class Box2DWorld {
 
     /*

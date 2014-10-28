@@ -6,6 +6,9 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Class used to hold whole game logic. It is used also to pass all collisions to entities.
+ */
 public class GameWorld implements ContactListener {
 
     private Map map;

@@ -1,5 +1,8 @@
 package com.infunity.isometricgame.shared.intefaces;
 
+/**
+ * Effect interface that is used to pass effect events to client
+ */
 public interface EffectsInterface {
 
     public enum Effect {

@@ -2,9 +2,12 @@ package com.infunity.isometricgame.core;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.FPSLogger;
-import com.infunity.isometricgame.shared.model.Assets;
 import com.infunity.isometricgame.core.screens.LoadingScreen;
+import com.infunity.isometricgame.shared.model.Assets;
 
+/**
+ * Main game class
+ */
 public class IsometricGame extends Game {
 
     public static final boolean DEBUG = true;

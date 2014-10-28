@@ -1,12 +1,13 @@
 package com.infunity.isometricgame.shared.model.maps;
 
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
-import com.infunity.isometricgame.shared.model.PhysicsObject;
 import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
+/**
+ * Sample Map class
+ */
 public class TestMap extends Map {
 
     public TestMap(Box2DWorld box2dworld, EffectsInterface effectManager) {

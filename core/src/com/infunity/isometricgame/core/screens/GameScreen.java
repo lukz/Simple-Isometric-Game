@@ -6,20 +6,22 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.IsometricGame;
+import com.infunity.isometricgame.core.input.PlayerInputHandler;
 import com.infunity.isometricgame.core.model.PlayerNavigator;
 import com.infunity.isometricgame.core.view.EffectManager;
 import com.infunity.isometricgame.core.view.EscapeWindow;
 import com.infunity.isometricgame.core.view.ParticleManager;
+import com.infunity.isometricgame.core.view.WorldRenderer;
+import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.GameWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
 import com.infunity.isometricgame.shared.model.maps.TestMap;
-import com.infunity.isometricgame.shared.model.Box2DWorld;
-import com.infunity.isometricgame.core.view.WorldRenderer;
 
+/**
+ * In-game screen with game loop
+ */
 public class GameScreen implements Screen {
 
     public IsometricGame game;

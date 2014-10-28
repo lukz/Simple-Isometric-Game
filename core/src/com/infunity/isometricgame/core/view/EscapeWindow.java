@@ -2,15 +2,18 @@ package com.infunity.isometricgame.core.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
-import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.utils.SaveGame;
 import com.infunity.isometricgame.shared.model.GameWorld;
 
+/**
+ * Class that setup pause window
+ */
 public class EscapeWindow extends Window {
 
     private GameWorld world;

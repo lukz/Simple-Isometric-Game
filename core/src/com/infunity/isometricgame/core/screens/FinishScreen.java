@@ -16,6 +16,9 @@ import com.infunity.isometricgame.core.utils.PlayerScore;
 
 import java.util.Comparator;
 
+/**
+ * Finish game screen containing list of highscores
+ */
 public class FinishScreen implements Screen {
 
     private IsometricGame game;

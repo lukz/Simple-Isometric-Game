@@ -3,6 +3,9 @@ package com.infunity.isometricgame.core.model;
 import com.badlogic.gdx.math.Vector2;
 import com.infunity.isometricgame.shared.model.entities.Player;
 
+/**
+ * Class handles player touch movement
+ */
 public class PlayerNavigator {
 
     private Player player;

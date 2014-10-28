@@ -3,9 +3,12 @@ package com.infunity.isometricgame.shared.model.entities;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
-import com.infunity.isometricgame.shared.model.maps.Map;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
+import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Coin entity class
+ */
 public class Coin extends Entity implements PhysicsObject {
 
     public static final int COIN_WIDTH = 40;

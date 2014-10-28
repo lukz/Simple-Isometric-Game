@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 import com.infunity.isometricgame.core.IsometricGame;
 
+/**
+ * Class that manages poolable particles
+ */
 public class ParticleManager {
 
     private Array<ParticleEffectPool> effectPools = new Array();

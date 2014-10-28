@@ -13,9 +13,10 @@ import com.infunity.isometricgame.core.view.entityRenderers.PlayerRenderer;
 import com.infunity.isometricgame.shared.model.entities.Player;
 
 import static com.badlogic.gdx.graphics.g2d.Batch.*;
-import static com.badlogic.gdx.graphics.g2d.Batch.U2;
-import static com.badlogic.gdx.graphics.g2d.Batch.U3;
 
+/**
+ *  Isometric staggered tiled map renderer with ability to render players on map in correct order
+ */
 public class ExtendedIsometricStaggeredTiledMapRenderer extends IsometricStaggeredTiledMapRenderer {
 
     public ExtendedIsometricStaggeredTiledMapRenderer(TiledMap map, Batch batch) {

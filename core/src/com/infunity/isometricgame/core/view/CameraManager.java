@@ -7,6 +7,9 @@ import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.model.entities.Player;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Contains camera and updates camera position according to player movement
+ */
 public class CameraManager {
 
     private OrthographicCamera camera;

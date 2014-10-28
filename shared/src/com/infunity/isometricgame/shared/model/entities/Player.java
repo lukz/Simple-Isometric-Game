@@ -5,9 +5,12 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
-import com.infunity.isometricgame.shared.model.maps.Map;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
+import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Player entity class
+ */
 public class Player extends MovableEntity implements PhysicsObject {
 
     private Body body;

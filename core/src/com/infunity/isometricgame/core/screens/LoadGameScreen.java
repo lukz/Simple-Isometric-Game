@@ -12,10 +12,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.infunity.isometricgame.core.IsometricGame;
-import com.infunity.isometricgame.core.utils.PlayerScore;
 import com.infunity.isometricgame.core.utils.SaveGame;
 import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
+/**
+ * Load game screen with ability load and delete any save game from list
+ */
 public class LoadGameScreen implements Screen {
 
     private IsometricGame game;

@@ -9,12 +9,18 @@ import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
 import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.utils.MapDescriptor;
 import com.infunity.isometricgame.shared.utils.dermetfan.GeometryUtils;
 
+/**
+ * Class used to parse TMX file to game objects and process map properties
+ */
 public class MapProcessor {
 
     public static void createGroundObjects(Map map, MapLayer layer, Box2DWorld world) {

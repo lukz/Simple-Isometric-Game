@@ -5,6 +5,9 @@ import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.model.entities.Entity;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Entity manager that handles entities state updates
+ */
 public class EntityManager {
 
     private Array<Coin> coinEntities;
@@ -25,12 +28,6 @@ public class EntityManager {
         coinEntities.clear();
     }
 
-    public void dispose() {
-        for (Entity entity : coinEntities) {
-            entity.dispose();
-        }
-    }
-
     public void addCoin(Coin coin) {
         coinEntities.add(coin);
     }
@@ -46,5 +43,11 @@ public class EntityManager {
 
     public int getCoinsLeft() {
         return coinEntities.size;
+    }
+
+    public void dispose() {
+        for (Entity entity : coinEntities) {
+            entity.dispose();
+        }
     }
 }

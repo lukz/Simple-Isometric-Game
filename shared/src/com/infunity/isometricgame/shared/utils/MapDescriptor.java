@@ -5,6 +5,9 @@ import com.badlogic.gdx.utils.Array;
 import com.infunity.isometricgame.shared.model.entities.Coin;
 import com.infunity.isometricgame.shared.model.maps.Map;
 
+/**
+ * Map descriptor is used to store and serialize map data for save games.
+ */
 public class MapDescriptor {
 
     private float gameTime = 0;

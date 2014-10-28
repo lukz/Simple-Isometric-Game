@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.model.entities.Coin;
 
+/**
+ * Handles rendering coins on screen
+ */
 public class CoinsRenderer {
 
     private Sprite spr;

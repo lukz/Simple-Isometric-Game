@@ -1,13 +1,16 @@
 package com.infunity.isometricgame.shared.model.maps;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 import com.infunity.isometricgame.shared.model.Box2DWorld;
-import com.infunity.isometricgame.shared.model.entities.Player;
 import com.infunity.isometricgame.shared.model.EntityManager;
 import com.infunity.isometricgame.shared.model.PhysicsObject;
+import com.infunity.isometricgame.shared.model.entities.Player;
 
+/**
+ * Base map class
+ */
 public abstract class Map implements PhysicsObject {
 
     protected EntityManager entMan;

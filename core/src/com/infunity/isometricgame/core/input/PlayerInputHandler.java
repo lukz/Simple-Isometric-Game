@@ -3,15 +3,14 @@ package com.infunity.isometricgame.core.input;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.World;
-import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.model.PlayerNavigator;
-import com.infunity.isometricgame.core.utils.SaveGame;
 import com.infunity.isometricgame.core.view.WorldRenderer;
 import com.infunity.isometricgame.shared.model.GameWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
-import com.infunity.isometricgame.shared.utils.MapDescriptor;
 
+/**
+ * Implementation of input processor that handles player keyboard and touch (or mouse) input.
+ */
 public class PlayerInputHandler implements InputProcessor {
 
     private Map map;

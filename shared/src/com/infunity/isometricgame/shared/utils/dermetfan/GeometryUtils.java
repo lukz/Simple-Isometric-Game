@@ -14,24 +14,18 @@ package com.infunity.isometricgame.shared.utils.dermetfan;
  *  See the License for the specific language governing permissions and
  *  limitations under the License. */
 
-        import java.util.Arrays;
-        import java.util.Comparator;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.*;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.FloatArray;
+import com.badlogic.gdx.utils.Pools;
+import com.badlogic.gdx.utils.ShortArray;
 
-        import com.badlogic.gdx.graphics.OrthographicCamera;
-        import com.badlogic.gdx.math.EarClippingTriangulator;
-        import com.badlogic.gdx.math.Intersector;
-        import com.badlogic.gdx.math.MathUtils;
-        import com.badlogic.gdx.math.Polygon;
-        import com.badlogic.gdx.math.Rectangle;
-        import com.badlogic.gdx.math.Vector2;
-        import com.badlogic.gdx.math.Vector3;
-        import com.badlogic.gdx.utils.Array;
-        import com.badlogic.gdx.utils.FloatArray;
-        import com.badlogic.gdx.utils.Pools;
-        import com.badlogic.gdx.utils.ShortArray;
+import java.util.Arrays;
+import java.util.Comparator;
 
-        import static com.infunity.isometricgame.shared.utils.dermetfan.ArrayUtils.wrapIndex;
-        import static com.infunity.isometricgame.shared.utils.dermetfan.CustomMathUtils.*;
+import static com.infunity.isometricgame.shared.utils.dermetfan.ArrayUtils.wrapIndex;
+import static com.infunity.isometricgame.shared.utils.dermetfan.CustomMathUtils.*;
 
 /** Provides some useful methods for geometric calculations. Note that many methods return the same array instance so make a copy for subsequent calls.
  *  @author dermetfan */

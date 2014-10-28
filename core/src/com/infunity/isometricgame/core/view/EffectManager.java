@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.shared.intefaces.EffectsInterface;
 
+/**
+ * Manages effects such as particle effects
+ */
 public class EffectManager implements EffectsInterface {
 
     private ParticleManager particleManager;

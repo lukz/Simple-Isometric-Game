@@ -10,6 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.infunity.isometricgame.core.IsometricGame;
 
+/**
+ * Main menu screen
+ */
 public class MainMenuScreen implements Screen {
 
     private IsometricGame game;
