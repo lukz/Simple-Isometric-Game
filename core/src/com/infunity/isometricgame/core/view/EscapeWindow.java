@@ -3,11 +3,10 @@ package com.infunity.isometricgame.core.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Window;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.infunity.isometricgame.core.IsometricGame;
+import com.infunity.isometricgame.core.screens.MainMenuScreen;
 import com.infunity.isometricgame.core.utils.SaveGame;
 import com.infunity.isometricgame.shared.model.GameWorld;
 
@@ -19,7 +18,7 @@ public class EscapeWindow extends Window {
     private GameWorld world;
     private WorldRenderer renderer;
 
-    public EscapeWindow(Skin skin, Stage stage, GameWorld gameWorld, WorldRenderer worldRenderer) {
+    public EscapeWindow(Skin skin, Stage stage, GameWorld gameWorld, WorldRenderer worldRenderer, final IsometricGame game) {
         super("", skin);
 
         this.world = gameWorld;
@@ -30,6 +29,7 @@ public class EscapeWindow extends Window {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.app.exit();
+                game.setScreen(new MainMenuScreen(game));
             }
         });
 
@@ -39,6 +39,7 @@ public class EscapeWindow extends Window {
             public void changed(ChangeEvent event, Actor actor) {
                 SaveGame.saveGame(world.getMap());
                 Gdx.app.exit();
+                game.setScreen(new MainMenuScreen(game));
             }
         });
 
@@ -51,18 +52,24 @@ public class EscapeWindow extends Window {
             }
         });
 
-        TextButton freeCameraButton = new TextButton("Free camera movement", skin, "toggle");
-        freeCameraButton.setChecked(renderer.getCameraManager().isContinuousMovement());
-        freeCameraButton.addListener(new ChangeListener() {
+        final SelectBox cameraSelectBox = new SelectBox(skin);
+        cameraSelectBox.setItems(new String("Character moves"), new String("Map moves"));
+        cameraSelectBox.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                if(((TextButton)actor).isChecked()) {
+                if(cameraSelectBox.getSelectedIndex() == 0) {
                     renderer.getCameraManager().setContinuousMovement(true);
                 } else {
                     renderer.getCameraManager().setContinuousMovement(false);
                 }
             }
         });
+
+        if(renderer.getCameraManager().isContinuousMovement()) {
+            cameraSelectBox.setSelectedIndex(0);
+        } else {
+            cameraSelectBox.setSelectedIndex(1);
+        }
 
         setMovable(false);
 
@@ -73,7 +80,7 @@ public class EscapeWindow extends Window {
         buttonTable.add(resumeButton).pad(5);
 
         // Add everything to window
-        add(freeCameraButton).row();
+        add(cameraSelectBox).row();
 
         add("Do you want to exit game?").padTop(10);;
         row();

@@ -26,8 +26,8 @@ public class Assets {
     public final String DefaultSkin = "skin/uiskin.json";
 
     // Sounds
-    public final String CoinSound = "sounds/coin.ogg";
-    public final String FinishSound = "sounds/finish.ogg";
+    public final String CoinSound = "sounds/coin.mp3";
+    public final String FinishSound = "sounds/finish.mp3";
 
     private AssetManager manager;
 

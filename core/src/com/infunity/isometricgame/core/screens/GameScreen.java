@@ -58,7 +58,7 @@ public class GameScreen implements Screen {
         playerNav = new PlayerNavigator(map.getPlayer());
 
         stage = new Stage();
-        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render);
+        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render, game);
         stage.addActor(escapeDialog);
         escapeDialog.setVisible(false);
 
@@ -81,7 +81,7 @@ public class GameScreen implements Screen {
         playerNav = new PlayerNavigator(this.map.getPlayer());
 
         stage = new Stage();
-        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render);
+        escapeDialog = new EscapeWindow(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), stage, world, render, game);
         stage.addActor(escapeDialog);
         escapeDialog.setVisible(false);
 

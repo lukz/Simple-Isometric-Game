@@ -75,12 +75,22 @@ public class LoadGameScreen implements Screen {
             }
         });
 
+        // Create back button
+        TextButton backButton = new TextButton("Back", skin);
+        backButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                game.setScreen(new MainMenuScreen(game));
+            }
+        });
+
         Table buttonsTable = new Table();
         buttonsTable.add(deleteGameButton);
         buttonsTable.add(loadGameButton);
 
         rootTable.add(saveGameList).row();
-        rootTable.add(buttonsTable);
+        rootTable.add(buttonsTable).row();
+        rootTable.add(backButton);
 
         stage.addActor(rootTable);
 
