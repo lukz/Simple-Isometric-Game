@@ -5,6 +5,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.SelectBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
+/**
+ * Class that setup in-game camera SelectBox
+ */
 public class CameraSelectBox extends SelectBox {
 
     public CameraSelectBox(Skin skin, final WorldRenderer renderer) {

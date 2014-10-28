@@ -47,7 +47,7 @@ public class LoadGameScreen implements Screen {
 
         // Create saveGames strings array
         Array<String> saveGameStrings = new Array<String>();
-        for(int i = 0; i < saveGames.size - 1; i++) {
+        for(int i = 0; i < saveGames.size; i++) {
             saveGameStrings.add((i + 1) + ": " + saveGames.get(i).getCoinsPos().size + " coins left");
         }
 
@@ -75,22 +75,12 @@ public class LoadGameScreen implements Screen {
             }
         });
 
-        // Create back button
-        TextButton backButton = new TextButton("Back", skin);
-        backButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                game.setScreen(new MainMenuScreen(game));
-            }
-        });
-
         Table buttonsTable = new Table();
         buttonsTable.add(deleteGameButton);
         buttonsTable.add(loadGameButton);
 
         rootTable.add(saveGameList).row();
-        rootTable.add(buttonsTable).row();
-        rootTable.add(backButton);
+        rootTable.add(buttonsTable);
 
         stage.addActor(rootTable);
 
