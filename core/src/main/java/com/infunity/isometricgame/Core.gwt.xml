@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
+<module>
+    <inherits name="com.google.gwt.user.User"/>
+    <inherits name='com.google.gwt.core.Core' />
+    <!-- This one is not really needed; tries to fix warnings in unit tests -->
+    <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+    <inherits name="com.badlogic.gdx" />
+    <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
+
+    <inherits name="com.infunity.isometricgame.Shared"/>
+
+    <extend-configuration-property name="gdx.reflect.include" value="com.infunity.isometricgame.core.utils.PlayerScore" />
+
+    <source path="core" />
+</module>

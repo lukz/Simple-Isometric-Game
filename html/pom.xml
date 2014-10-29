@@ -12,31 +12,7 @@
 	<packaging>war</packaging>
 	<name>IsometricGame HTML</name>
 
-	<properties>
-		<gwt.module>com.infunity.isometricgame.IsometricGame</gwt.module>
-		<gwt.name>isometric-game</gwt.name>
-	</properties>
-
 	<dependencies>
-		<dependency>
-			<groupId>com.infunity.isometricgame</groupId>
-			<artifactId>isometric-game-core</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.badlogicgames.gdx</groupId>
-			<artifactId>gdx-backend-gwt</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.infunity.isometricgame</groupId>
-			<artifactId>isometric-game-core</artifactId>
-			<version>${project.version}</version>
-			<classifier>sources</classifier>
-			<scope>provided</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx</artifactId>
@@ -46,9 +22,31 @@
 
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-box2d</artifactId>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-box2d</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-gwt</artifactId>
 			<classifier>sources</classifier>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-backend-gwt</artifactId>
 		</dependency>
 
 		<dependency>
@@ -57,11 +55,47 @@
 			<version>${gwt.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-servlet</artifactId>
 			<version>${gwt.version}</version>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-box2d-gwt</artifactId>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.infunity.isometricgame</groupId>
+			<artifactId>isometric-game-shared</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.infunity.isometricgame</groupId>
+			<artifactId>isometric-game-shared</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.infunity.isometricgame</groupId>
+			<artifactId>isometric-game-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.infunity.isometricgame</groupId>
+			<artifactId>isometric-game-core</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -84,6 +118,9 @@
 				<configuration>
 					<webappDirectory>${project.build.directory}/webapp</webappDirectory>
 					<runTarget>index.html</runTarget>
+					<modules>
+						<module>com.infunity.isometricgame.GdxDefinition</module>
+					</modules>
 				</configuration>
 				<executions>
 					<execution>

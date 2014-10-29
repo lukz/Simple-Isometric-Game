@@ -16,6 +16,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.infunity.isometricgame</groupId>
+			<artifactId>isometric-game-shared</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.infunity.isometricgame</groupId>
 			<artifactId>isometric-game-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>

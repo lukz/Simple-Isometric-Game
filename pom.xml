@@ -9,10 +9,14 @@
 	<name>IsometricGame Parent</name>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<android.version>4.1.1.4</android.version>
 		<android.maven.version>3.8.1</android.maven.version>
 		<gwt.version>2.6.0</gwt.version>
 		<gwt.maven.version>2.6.0</gwt.maven.version>
+		<gwt.style>PRETTY</gwt.style>
+		<java-version>1.6</java-version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -21,6 +25,26 @@
 				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx</artifactId>
 				<version>1.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx</artifactId>
+				<version>1.2.0</version>
+				<classifier>sources</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-box2d</artifactId>
+				<version>1.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-box2d</artifactId>
+				<version>1.2.0</version>
+				<classifier>sources</classifier>
 			</dependency>
 
 			<!-- android-specific dependencies -->
@@ -64,14 +88,6 @@
 			<!-- gwt-specific dependencies -->
 			<dependency>
 				<groupId>com.badlogicgames.gdx</groupId>
-				<artifactId>gdx</artifactId>
-				<version>1.2.0</version>
-				<classifier>sources</classifier>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx-backend-gwt</artifactId>
 				<version>1.2.0</version>
 				<classifier>sources</classifier>
@@ -82,6 +98,22 @@
 				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx-backend-gwt</artifactId>
 				<version>1.2.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-box2d-gwt</artifactId>
+				<version>1.2.0</version>
+				<classifier>sources</classifier>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-box2d-gwt</artifactId>
+				<version>1.2.0</version>
+				<scope>provided</scope>
 			</dependency>
 
 			<!-- ios-specific dependencies -->
@@ -117,6 +149,20 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -148,6 +194,10 @@
 	</profiles>
 
 	<modules>
+		<module>shared</module>
 		<module>core</module>
+		<module>desktop</module>
+		<module>html</module>
+		<module>android</module>
 	</modules>
 </project>
