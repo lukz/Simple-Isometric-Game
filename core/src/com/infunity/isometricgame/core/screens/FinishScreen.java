@@ -33,6 +33,8 @@ public class FinishScreen implements Screen {
 
     private float timer = 0;
 
+    private boolean nameEntered = false;
+
     public FinishScreen(IsometricGame game, float gameTime) {
         this.game = game;
         this.gameTime = gameTime;
@@ -94,6 +96,7 @@ public class FinishScreen implements Screen {
     }
 
     public void showHighscores() {
+        nameEntered = true;
         Array<PlayerScore> highscores;// = new ArrayMap<String, Float>();
 
         String playerName = prefs.getString("playerName", null);
@@ -138,7 +141,9 @@ public class FinishScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        timer += delta;
+        if(nameEntered) {
+            timer += delta;
+        }
         if(timer > 5) {
             game.setScreen(new MainMenuScreen(game));
         }
