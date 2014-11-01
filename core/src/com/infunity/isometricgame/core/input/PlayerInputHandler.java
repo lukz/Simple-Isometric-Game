@@ -1,9 +1,12 @@
 package com.infunity.isometricgame.core.input;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
+import com.infunity.isometricgame.core.IsometricGame;
 import com.infunity.isometricgame.core.model.PlayerNavigator;
+import com.infunity.isometricgame.core.screens.MainMenuScreen;
 import com.infunity.isometricgame.core.view.WorldRenderer;
 import com.infunity.isometricgame.shared.model.GameWorld;
 import com.infunity.isometricgame.shared.model.maps.Map;
@@ -19,7 +22,10 @@ public class PlayerInputHandler implements InputProcessor {
 
     private PlayerNavigator playerNav;
 
-    public PlayerInputHandler(Map map, GameWorld world, WorldRenderer renderer, PlayerNavigator playerNav) {
+    private IsometricGame game;
+
+    public PlayerInputHandler(IsometricGame game, Map map, GameWorld world, WorldRenderer renderer, PlayerNavigator playerNav) {
+        this.game = game;
         this.map = map;
         this.renderer = renderer;
 
@@ -72,6 +78,13 @@ public class PlayerInputHandler implements InputProcessor {
                 return true;
             case Input.Keys.ESCAPE:
                 world.setGameState(GameWorld.GameState.GAME_PAUSED);
+                return true;
+            case Input.Keys.BACK:
+                if(world.getGameState().equals(GameWorld.GameState.GAME_STARTED)) {
+                    world.setGameState(GameWorld.GameState.GAME_PAUSED);
+                } else {
+                    game.setScreen(new MainMenuScreen(game));
+                }
                 return true;
         }
 

@@ -23,6 +23,7 @@ public class MainMenuScreen implements Screen {
 
         this.stage = new Stage();
         Gdx.input.setInputProcessor(stage);
+        Gdx.input.setCatchBackKey(false);
     }
 
     @Override
