@@ -1,6 +1,7 @@
 package com.infunity.isometricgame.core.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
@@ -65,7 +66,8 @@ public class GameScreen implements Screen {
         stage.addActor(camSelectBox);
 
         Gdx.input.setInputProcessor(new InputMultiplexer(stage,
-                new PlayerInputHandler(this.map, world, render, playerNav)));
+                new PlayerInputHandler(game, this.map, world, render, playerNav)));
+        Gdx.input.setCatchBackKey(true);
     }
 
     /*
@@ -87,8 +89,14 @@ public class GameScreen implements Screen {
         stage.addActor(escapeDialog);
         escapeDialog.setVisible(false);
 
+        CameraSelectBox camSelectBox = new CameraSelectBox(IsometricGame.assets.get(IsometricGame.assets.DefaultSkin, Skin.class), render);
+        camSelectBox.setPosition(IsometricGame.TARGET_WIDTH - camSelectBox.getWidth() - 10,
+                IsometricGame.TARGET_HEIGHT - 50);
+        stage.addActor(camSelectBox);
+
         Gdx.input.setInputProcessor(new InputMultiplexer(stage,
-                new PlayerInputHandler(this.map, world, render, playerNav)));
+                new PlayerInputHandler(game, this.map, world, render, playerNav)));
+        Gdx.input.setCatchBackKey(true);
     }
 
     @Override

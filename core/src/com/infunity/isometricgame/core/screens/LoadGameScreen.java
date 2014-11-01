@@ -1,7 +1,6 @@
 package com.infunity.isometricgame.core.screens;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -18,7 +17,7 @@ import com.infunity.isometricgame.shared.utils.MapDescriptor;
 /**
  * Load game screen with ability load and delete any save game from list
  */
-public class LoadGameScreen implements Screen {
+public class LoadGameScreen extends InputAdapter implements Screen {
 
     private IsometricGame game;
 
@@ -32,7 +31,8 @@ public class LoadGameScreen implements Screen {
         this.game = game;
 
         this.stage = new Stage();
-        Gdx.input.setInputProcessor(stage);
+        Gdx.input.setInputProcessor(new InputMultiplexer(stage, this));
+        Gdx.input.setCatchBackKey(true);
     }
 
     @Override
@@ -102,6 +102,16 @@ public class LoadGameScreen implements Screen {
 
         stage.act(delta);
         stage.draw();
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        if(keycode == Input.Keys.BACK) {
+            game.setScreen(new MainMenuScreen(game));
+            return true;
+        }
+
+        return false;
     }
 
     @Override
