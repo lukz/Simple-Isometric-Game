@@ -11,5 +11,6 @@ Hints about building and running:
 2) gradle html:dist creates a deployable version, under html\build\dist
 3) gradle html:superDev create a "directly running" version. I think it can somehow be debugged into the web-browser console.
 4) I think gradle html:superDev does not work in Firefox for me, but it does work in Chrome.
+5) Do not trust what gradle html:superDev says at the end; the URL to go to is: http://localhost:8080/html/
 5) For Android: gradlew android:installDebug android:run does the job.
 
